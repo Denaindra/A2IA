@@ -1,0 +1,7 @@
+US_dyn3.2 coef11  (HMMcoef.bw0.best)
+
+case independant letter models
+noise : whole word noise trained by XD 09/2000
+
+
+

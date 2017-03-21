@@ -1,0 +1,19 @@
+#
+12 NN_weightVector(1024)
+23 NN_spatialConvolution(1,6,32,32,5,5,1,1)
+24 NN_tanh(4704)
+25 NN_spatialSubsampling(6,28,28,2,2,2)
+26 NN_tanh(1176)
+27 NN_spatialConvolution(6,36,14,14,5,5,1,1)
+28 NN_tanh(3600)
+29 NN_spatialSubsampling(36,10,10,2,2,2)
+30 NN_tanh(900)
+31 NN_spatialConvolution(36,120,5,5,5,5,1,1)
+32 NN_tanh(120)
+33 NN_linear(120,200)
+34 NN_tanh(200)
+35 NN_linear(200,10)
+36 NN_softmax(10)
+37 NN_containerV{23,24,25,26,27,28,29,30,31,32,33,34,35,36}
+1 NN_containerV{12,37}
+#

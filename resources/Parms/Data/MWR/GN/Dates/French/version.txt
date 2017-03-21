@@ -1,0 +1,5 @@
+FR_dyn4.1 coef8
+
+case independant letter models
+NNcoef = FR_dyn4.1/coef8
+

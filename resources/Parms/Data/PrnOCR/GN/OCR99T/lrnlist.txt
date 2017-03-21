@@ -1,0 +1,22 @@
+[DBs]
+DB00 = Career_Arial.12_0.040928`for_Arial_300
+DB01 = Career_Arial.12_700.040928`for_Arial_300
+DB02 = Career_Times_New_Roman.10_0.040928`for_Times_300
+DB03 = Career_Times_New_Roman.10_0.040928`for_Times_black_300
+DB04 = Career_Times_New_Roman.10_700.040928`for_Times_300
+DB05 = US_addr_Arial.12_0.040928`for_Arial_300
+DB06 = US_addr_Arial.12_700.040928`for_Arial_300
+DB07 = US_addr_Times_New_Roman.12_0.040928`for_Times_300
+DB08 = US_addr_Times_New_Roman.12_0.040928`for_Times_black_300
+DB09 = US_addr_Times_New_Roman.12_700.040928`for_Times_300
+DB10 = Career_Times_New_Roman.8_0.040928`for_Times_black_300
+DB11 = OCR99_Arial.12_0.040928`for_Arial_300
+DB12 = OCR99_Arial.12_700.040928`for_Arial_300
+DB13 = OCR99_Times_New_Roman.10_0.040928`for_Times_300
+DB14 = OCR99_Times_New_Roman.10_0.040928`for_Times_black_300
+DB15 = OCR99_Times_New_Roman.10_0.040928`for_Times_white_300
+DB16 = OCR99_Times_New_Roman.10_700.040928`for_Times_300
+DB17 = OCR99_Times_New_Roman.12_0.040928`for_Times_300
+DB18 = OCR99_Times_New_Roman.12_0.040928`for_Times_black_300
+DB19 = OCR99_Times_New_Roman.12_0.040928`for_Times_white_300
+DB20 = OCR99_Times_New_Roman.12_700.040928`for_Times_300

@@ -1,0 +1,56 @@
+#
+
+
+20 NN_linear(222,60)
+21 NN_tanh(60)
+22 NN_linear(60,93)
+23 NN_softmax(93)
+24 NN_normalisation(93)
+
+25 NN_containerV{20,21,22,23,24}
+
+
+10 NN_linear(90,60)
+11 NN_tanh(60)
+12 NN_linear(60,93)
+13 NN_softmax(93)
+14 NN_normalisation(93)
+
+15 NN_containerV{10,11,12,13,14}
+
+
+30 NN_linear(144,60)
+31 NN_tanh(60)
+32 NN_linear(60,93)
+33 NN_softmax(93)
+34 NN_normalisation(93)
+
+35 NN_containerV{30,31,32,33,34}
+
+
+40 NN_linear(196,60)
+41 NN_tanh(60)
+42 NN_linear(60,93)
+43 NN_softmax(93)
+44 NN_normalisation(93)
+
+45 NN_containerV{40,41,42,43,44}
+
+
+
+60 NN_containerH{25,15,35,45}
+
+
+
+50 NN_linear(372,70)
+51 NN_tanh(70)
+52 NN_linear(70,93)
+53 NN_softmax(93)
+
+55 NN_containerV{50,51,52,53}
+
+71 NN_log(372)
+
+1 NN_containerV{60,71,55}
+
+#

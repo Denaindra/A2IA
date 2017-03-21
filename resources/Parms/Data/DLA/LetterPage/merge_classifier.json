@@ -1,0 +1,1997 @@
+{ "__class__" : "ML_TesterSequence" ,
+  "__version__" : 1 ,
+  "inputMetadata" :
+  { "__class__" : "ML_MetaData" ,
+    "m_doContainScore" : 0 ,
+    "m_targetLexicon" :
+    { "__class__" : "ML_Lexicon" ,
+      "m_word2index" :
+      {
+        "Merge" : 0 ,
+        "NoMerge" : 1
+      }
+    } ,
+    "m_numericLexicon" :
+    { "__class__" : "ML_Lexicon" ,
+      "m_word2index" :
+      {
+        "CentroidDistance" : 0 ,
+        "OverlappingArea" : 1 ,
+        "HorizontalOverlapXDistance" : 2 ,
+        "HorizontalOverlapYDistance" : 3 ,
+        "VerticalOverlapXDistance" : 4 ,
+        "VerticalOverlapYDistance" : 5 ,
+        "AreaRatio" : 6 ,
+        "LeftRightDistance" : 7 ,
+        "RightLeftDistance" : 8 ,
+        "LeftLeftDistance" : 9 ,
+        "RightRightDistance" : 10 ,
+        "TopBottomDistance" : 11 ,
+        "BottomTopDistance" : 12 ,
+        "TopTopDistance" : 13 ,
+        "BottomBottomDistance" : 14 ,
+        "Rect1TopDistanceRatio" : 15 ,
+        "Rect1BottomDistanceRatio" : 16 ,
+        "Rect1AreaRatio" : 17 ,
+        "Rect1AspectRatio" : 18 ,
+        "Rect1Width" : 19 ,
+        "Rect1Height" : 20 ,
+        "Rect2TopDistanceRatio" : 21 ,
+        "Rect2BottomDistanceRatio" : 22 ,
+        "Rect2AreaRatio" : 23 ,
+        "Rect2AspectRatio" : 24 ,
+        "Rect2Width" : 25 ,
+        "Rect2Height" : 26 ,
+        "NumberOfNeighbors" : 27
+      }
+    }
+  } ,
+  "m_testers" :
+  [
+    { "__class__" : "ML_TesterCombiLinear" ,
+      "nbTesters" : 46 ,
+      "m_testers" :
+      [
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "CentroidDistance" ,
+          "m_threshold" : 0.253673 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1BottomDistanceRatio" ,
+            "m_threshold" : 0.310157 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "TopBottomDistance" ,
+              "m_threshold" : 0.325891 ,
+              "m_scoresIfHigher" : [ -0.876438 , 0.876438 ] ,
+              "m_scoresIfLower" : [ -0.0760308 , 0.0760308 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1BottomDistanceRatio" ,
+              "m_threshold" : 0.219115 ,
+              "m_scoresIfHigher" : [ -2.11007 , 2.11007 ] ,
+              "m_scoresIfLower" : [ -3.22689 , 3.22689 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "BottomBottomDistance" ,
+            "m_threshold" : 0.114779 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1BottomDistanceRatio" ,
+              "m_threshold" : 0.363389 ,
+              "m_scoresIfHigher" : [ 0.0812617 , -0.0812617 ] ,
+              "m_scoresIfLower" : [ -1.21368 , 1.21368 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "LeftLeftDistance" ,
+              "m_threshold" : 0.0219605 ,
+              "m_scoresIfHigher" : [ 0.143871 , -0.143871 ] ,
+              "m_scoresIfLower" : [ 0.867776 , -0.867776 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "Rect1BottomDistanceRatio" ,
+          "m_threshold" : 0.406556 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect2TopDistanceRatio" ,
+            "m_threshold" : 0.809254 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2Height" ,
+              "m_threshold" : 0.00453108 ,
+              "m_scoresIfHigher" : [ -0.418609 , 0.418609 ] ,
+              "m_scoresIfLower" : [ -1.92549 , 1.92549 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "RightLeftDistance" ,
+              "m_threshold" : 0.592055 ,
+              "m_scoresIfHigher" : [ 0.835185 , -0.835185 ] ,
+              "m_scoresIfLower" : [ 0.238962 , -0.238962 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "CentroidDistance" ,
+            "m_threshold" : 0.15385 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1BottomDistanceRatio" ,
+              "m_threshold" : 0.254288 ,
+              "m_scoresIfHigher" : [ -0.854951 , 0.854951 ] ,
+              "m_scoresIfLower" : [ -1.99369 , 1.99369 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "CentroidDistance" ,
+              "m_threshold" : 0.0626991 ,
+              "m_scoresIfHigher" : [ -0.165921 , 0.165921 ] ,
+              "m_scoresIfLower" : [ 0.775386 , -0.775386 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "BottomBottomDistance" ,
+          "m_threshold" : 0.382647 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1BottomDistanceRatio" ,
+            "m_threshold" : 0.2375 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "BottomTopDistance" ,
+              "m_threshold" : 0.435206 ,
+              "m_scoresIfHigher" : [ -1.62 , 1.62 ] ,
+              "m_scoresIfLower" : [ -0.734558 , 0.734558 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "BottomTopDistance" ,
+              "m_threshold" : 0.164636 ,
+              "m_scoresIfHigher" : [ -2.6469 , 2.6469 ] ,
+              "m_scoresIfLower" : [ 0.212572 , -0.212572 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "CentroidDistance" ,
+            "m_threshold" : 0.176497 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1BottomDistanceRatio" ,
+              "m_threshold" : 0.318969 ,
+              "m_scoresIfHigher" : [ -0.0718483 , 0.0718483 ] ,
+              "m_scoresIfLower" : [ -1.18617 , 1.18617 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "BottomTopDistance" ,
+              "m_threshold" : 0.0137084 ,
+              "m_scoresIfHigher" : [ 0.0936945 , -0.0936945 ] ,
+              "m_scoresIfLower" : [ 0.800607 , -0.800607 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "BottomBottomDistance" ,
+          "m_threshold" : 0.213416 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1BottomDistanceRatio" ,
+            "m_threshold" : 0.303122 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "VerticalOverlapXDistance" ,
+              "m_threshold" : 0.515004 ,
+              "m_scoresIfHigher" : [ 0.360058 , -0.360058 ] ,
+              "m_scoresIfLower" : [ -0.423889 , 0.423889 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1Width" ,
+              "m_threshold" : 0.565681 ,
+              "m_scoresIfHigher" : [ -0.290255 , 0.290255 ] ,
+              "m_scoresIfLower" : [ -1.55454 , 1.55454 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1BottomDistanceRatio" ,
+            "m_threshold" : 0.415412 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2TopDistanceRatio" ,
+              "m_threshold" : 0.817291 ,
+              "m_scoresIfHigher" : [ -0.437479 , 0.437479 ] ,
+              "m_scoresIfLower" : [ 0.463689 , -0.463689 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "CentroidDistance" ,
+              "m_threshold" : 0.0874278 ,
+              "m_scoresIfHigher" : [ -0.411815 , 0.411815 ] ,
+              "m_scoresIfLower" : [ 0.334805 , -0.334805 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "BottomTopDistance" ,
+          "m_threshold" : 0.3735 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1BottomDistanceRatio" ,
+            "m_threshold" : 0.124188 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1BottomDistanceRatio" ,
+              "m_threshold" : 0.341856 ,
+              "m_scoresIfHigher" : [ -0.576394 , 0.576394 ] ,
+              "m_scoresIfLower" : [ -1.2225 , 1.2225 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "CentroidDistance" ,
+              "m_threshold" : 0.236961 ,
+              "m_scoresIfHigher" : [ -4.86773 , 4.86773 ] ,
+              "m_scoresIfLower" : [ -0.245671 , 0.245671 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "LeftLeftDistance" ,
+            "m_threshold" : 0.016616 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1BottomDistanceRatio" ,
+              "m_threshold" : 0.36387 ,
+              "m_scoresIfHigher" : [ 0.0197556 , -0.0197556 ] ,
+              "m_scoresIfLower" : [ -0.528988 , 0.528988 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1Width" ,
+              "m_threshold" : 0.655193 ,
+              "m_scoresIfHigher" : [ 0.770943 , -0.770943 ] ,
+              "m_scoresIfLower" : [ 0.167503 , -0.167503 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "TopTopDistance" ,
+          "m_threshold" : 0.127363 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1TopDistanceRatio" ,
+            "m_threshold" : 0.303268 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2TopDistanceRatio" ,
+              "m_threshold" : 0.900072 ,
+              "m_scoresIfHigher" : [ -0.967793 , 0.967793 ] ,
+              "m_scoresIfLower" : [ -0.0312174 , 0.0312174 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1Width" ,
+              "m_threshold" : 0.512537 ,
+              "m_scoresIfHigher" : [ -0.0846113 , 0.0846113 ] ,
+              "m_scoresIfLower" : [ -0.954461 , 0.954461 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1Height" ,
+            "m_threshold" : 0.0056924 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "OverlappingArea" ,
+              "m_threshold" : 0.000213612 ,
+              "m_scoresIfHigher" : [ 1.30221 , -1.30221 ] ,
+              "m_scoresIfLower" : [ 0.195293 , -0.195293 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2TopDistanceRatio" ,
+              "m_threshold" : 0.777362 ,
+              "m_scoresIfHigher" : [ -1.53788 , 1.53788 ] ,
+              "m_scoresIfLower" : [ -0.251662 , 0.251662 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "BottomTopDistance" ,
+          "m_threshold" : 0.0468192 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1TopDistanceRatio" ,
+            "m_threshold" : 0.340841 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2TopDistanceRatio" ,
+              "m_threshold" : 0.889293 ,
+              "m_scoresIfHigher" : [ -0.705152 , 0.705152 ] ,
+              "m_scoresIfLower" : [ 0.0592214 , -0.0592214 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1Width" ,
+              "m_threshold" : 0.564839 ,
+              "m_scoresIfHigher" : [ 0.0358935 , -0.0358935 ] ,
+              "m_scoresIfLower" : [ -0.55088 , 0.55088 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "AreaRatio" ,
+            "m_threshold" : 2.32693e-07 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "HorizontalOverlapYDistance" ,
+              "m_threshold" : 0.0031193 ,
+              "m_scoresIfHigher" : [ 0.62034 , -0.62034 ] ,
+              "m_scoresIfLower" : [ -0.00439273 , 0.0043927 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "VerticalOverlapXDistance" ,
+              "m_threshold" : 0.530297 ,
+              "m_scoresIfHigher" : [ 1.93677 , -1.93677 ] ,
+              "m_scoresIfLower" : [ 0.428134 , -0.428134 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "LeftLeftDistance" ,
+          "m_threshold" : 0.157174 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1Width" ,
+            "m_threshold" : 0.148621 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "BottomTopDistance" ,
+              "m_threshold" : 0.0262068 ,
+              "m_scoresIfHigher" : [ -0.485046 , 0.485046 ] ,
+              "m_scoresIfLower" : [ 0.0101713 , -0.0101713 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1AspectRatio" ,
+              "m_threshold" : 8.21474 ,
+              "m_scoresIfHigher" : [ -0.69174 , 0.69174 ] ,
+              "m_scoresIfLower" : [ 0.193148 , -0.193148 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "AreaRatio" ,
+            "m_threshold" : 2.24202e-07 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "VerticalOverlapYDistance" ,
+              "m_threshold" : 0.00857756 ,
+              "m_scoresIfHigher" : [ -0.0707761 , 0.0707761 ] ,
+              "m_scoresIfLower" : [ 0.305206 , -0.305206 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1BottomDistanceRatio" ,
+              "m_threshold" : 0.462186 ,
+              "m_scoresIfHigher" : [ 1.0229 , -1.0229 ] ,
+              "m_scoresIfLower" : [ 0.182555 , -0.182554 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "Rect1BottomDistanceRatio" ,
+          "m_threshold" : 0.458607 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect2TopDistanceRatio" ,
+            "m_threshold" : 0.723356 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2Height" ,
+              "m_threshold" : 0.00596492 ,
+              "m_scoresIfHigher" : [ -0.00507721 , 0.00507719 ] ,
+              "m_scoresIfLower" : [ -0.740125 , 0.740125 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "NumberOfNeighbors" ,
+              "m_threshold" : 5.5 ,
+              "m_scoresIfHigher" : [ 0.926509 , -0.926509 ] ,
+              "m_scoresIfLower" : [ 0.295232 , -0.295232 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "CentroidDistance" ,
+            "m_threshold" : 0.291824 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1BottomDistanceRatio" ,
+              "m_threshold" : 0.15797 ,
+              "m_scoresIfHigher" : [ -0.309774 , 0.309774 ] ,
+              "m_scoresIfLower" : [ -1.30424 , 1.30424 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2TopDistanceRatio" ,
+              "m_threshold" : 0.157094 ,
+              "m_scoresIfHigher" : [ -0.124712 , 0.124712 ] ,
+              "m_scoresIfLower" : [ 0.440037 , -0.440037 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "LeftLeftDistance" ,
+          "m_threshold" : 0.0905464 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "NumberOfNeighbors" ,
+            "m_threshold" : 8.5 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1TopDistanceRatio" ,
+              "m_threshold" : 0.303268 ,
+              "m_scoresIfHigher" : [ 0.368149 , -0.368149 ] ,
+              "m_scoresIfLower" : [ -0.525564 , 0.525564 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "BottomTopDistance" ,
+              "m_threshold" : 0.0745702 ,
+              "m_scoresIfHigher" : [ -0.469045 , 0.469045 ] ,
+              "m_scoresIfLower" : [ -0.0232092 , 0.0232092 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "RightLeftDistance" ,
+            "m_threshold" : 0.641219 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "AreaRatio" ,
+              "m_threshold" : 2.32118e-07 ,
+              "m_scoresIfHigher" : [ 0.193757 , -0.193757 ] ,
+              "m_scoresIfLower" : [ 0.930837 , -0.930837 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2TopDistanceRatio" ,
+              "m_threshold" : 0.179574 ,
+              "m_scoresIfHigher" : [ -0.087321 , 0.087321 ] ,
+              "m_scoresIfLower" : [ 0.486632 , -0.486632 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "TopTopDistance" ,
+          "m_threshold" : 0.047653 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "NumberOfNeighbors" ,
+            "m_threshold" : 10.5 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1BottomDistanceRatio" ,
+              "m_threshold" : 0.15797 ,
+              "m_scoresIfHigher" : [ 0.252174 , -0.252174 ] ,
+              "m_scoresIfLower" : [ -2.87176 , 2.87176 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "LeftLeftDistance" ,
+              "m_threshold" : 0.228841 ,
+              "m_scoresIfHigher" : [ -0.338059 , 0.33806 ] ,
+              "m_scoresIfLower" : [ -0.00790585 , 0.00790589 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1Height" ,
+            "m_threshold" : 0.00907916 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2BottomDistanceRatio" ,
+              "m_threshold" : 0.429204 ,
+              "m_scoresIfHigher" : [ 0.578548 , -0.578548 ] ,
+              "m_scoresIfLower" : [ 0.216503 , -0.216503 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2Height" ,
+              "m_threshold" : 0.00646831 ,
+              "m_scoresIfHigher" : [ -0.0752155 , 0.0752155 ] ,
+              "m_scoresIfLower" : [ -0.719464 , 0.719464 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "Rect2TopDistanceRatio" ,
+          "m_threshold" : 0.889293 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect2Height" ,
+            "m_threshold" : 0.00453108 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2AreaRatio" ,
+              "m_threshold" : 2.92387e-05 ,
+              "m_scoresIfHigher" : [ -0.429029 , 0.429029 ] ,
+              "m_scoresIfLower" : [ 1.49146 , -1.49146 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2Width" ,
+              "m_threshold" : 0.0119119 ,
+              "m_scoresIfHigher" : [ -4.3519 , 4.3519 ] ,
+              "m_scoresIfLower" : [ -0.286052 , 0.286052 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1TopDistanceRatio" ,
+            "m_threshold" : 0.439113 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "AreaRatio" ,
+              "m_threshold" : 2.31836e-07 ,
+              "m_scoresIfHigher" : [ 0.048446 , -0.048446 ] ,
+              "m_scoresIfLower" : [ 0.504646 , -0.504646 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1Width" ,
+              "m_threshold" : 0.564839 ,
+              "m_scoresIfHigher" : [ 0.200123 , -0.200122 ] ,
+              "m_scoresIfLower" : [ -0.164367 , 0.164367 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "TopTopDistance" ,
+          "m_threshold" : 0.159637 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1BottomDistanceRatio" ,
+            "m_threshold" : 0.180922 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "NumberOfNeighbors" ,
+              "m_threshold" : 6.5 ,
+              "m_scoresIfHigher" : [ 0.0747913 , -0.0747913 ] ,
+              "m_scoresIfLower" : [ -0.212606 , 0.212606 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1TopDistanceRatio" ,
+              "m_threshold" : 0.0610386 ,
+              "m_scoresIfHigher" : [ -1.51034 , 1.51034 ] ,
+              "m_scoresIfLower" : [ -0.384653 , 0.384653 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "NumberOfNeighbors" ,
+            "m_threshold" : 3.5 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2TopDistanceRatio" ,
+              "m_threshold" : 0.837329 ,
+              "m_scoresIfHigher" : [ -0.298323 , 0.298323 ] ,
+              "m_scoresIfLower" : [ 0.517343 , -0.517343 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "LeftLeftDistance" ,
+              "m_threshold" : 0.114662 ,
+              "m_scoresIfHigher" : [ -0.204255 , 0.204255 ] ,
+              "m_scoresIfLower" : [ 0.133058 , -0.133058 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "HorizontalOverlapYDistance" ,
+          "m_threshold" : 0.00218691 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "HorizontalOverlapXDistance" ,
+            "m_threshold" : 0.0702911 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1BottomDistanceRatio" ,
+              "m_threshold" : 0.193618 ,
+              "m_scoresIfHigher" : [ 0.301823 , -0.301823 ] ,
+              "m_scoresIfLower" : [ -0.462665 , 0.462665 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "AreaRatio" ,
+              "m_threshold" : 2.48764e-07 ,
+              "m_scoresIfHigher" : [ 0.655711 , -0.655712 ] ,
+              "m_scoresIfLower" : [ 1.63147 , -1.63147 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "LeftLeftDistance" ,
+            "m_threshold" : 0.00893401 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "NumberOfNeighbors" ,
+              "m_threshold" : 1.5 ,
+              "m_scoresIfHigher" : [ -0.0129245 , 0.0129246 ] ,
+              "m_scoresIfLower" : [ -0.316429 , 0.316429 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2BottomDistanceRatio" ,
+              "m_threshold" : 0.173007 ,
+              "m_scoresIfHigher" : [ 0.140539 , -0.140539 ] ,
+              "m_scoresIfLower" : [ 0.747421 , -0.747421 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "TopTopDistance" ,
+          "m_threshold" : 0.246537 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1BottomDistanceRatio" ,
+            "m_threshold" : 0.15797 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "NumberOfNeighbors" ,
+              "m_threshold" : 18.5 ,
+              "m_scoresIfHigher" : [ 0.222453 , -0.222453 ] ,
+              "m_scoresIfLower" : [ -0.179898 , 0.179898 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1Width" ,
+              "m_threshold" : 0.242724 ,
+              "m_scoresIfHigher" : [ -0.792249 , 0.792249 ] ,
+              "m_scoresIfLower" : [ -4.13322 , 4.13322 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "NumberOfNeighbors" ,
+            "m_threshold" : 4.5 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2Height" ,
+              "m_threshold" : 0.0056643 ,
+              "m_scoresIfHigher" : [ 0.36855 , -0.36855 ] ,
+              "m_scoresIfLower" : [ -0.229535 , 0.229535 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "BottomTopDistance" ,
+              "m_threshold" : 0.0120241 ,
+              "m_scoresIfHigher" : [ -0.0912186 , 0.0912186 ] ,
+              "m_scoresIfLower" : [ 0.263961 , -0.263961 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "LeftLeftDistance" ,
+          "m_threshold" : 0.305355 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1AspectRatio" ,
+            "m_threshold" : 5.57256 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1BottomDistanceRatio" ,
+              "m_threshold" : 0.236212 ,
+              "m_scoresIfHigher" : [ -0.226091 , 0.226091 ] ,
+              "m_scoresIfLower" : [ -0.600511 , 0.600511 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1TopDistanceRatio" ,
+              "m_threshold" : 0.44194 ,
+              "m_scoresIfHigher" : [ 0.205588 , -0.205588 ] ,
+              "m_scoresIfLower" : [ -0.0691655 , 0.0691656 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "RightLeftDistance" ,
+            "m_threshold" : 0.664884 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2Height" ,
+              "m_threshold" : 0.0119733 ,
+              "m_scoresIfHigher" : [ 0.37321 , -0.37321 ] ,
+              "m_scoresIfLower" : [ -0.627034 , 0.627034 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2Height" ,
+              "m_threshold" : 0.027954 ,
+              "m_scoresIfHigher" : [ -0.152775 , 0.152775 ] ,
+              "m_scoresIfLower" : [ 0.134579 , -0.13458 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "Rect2BottomDistanceRatio" ,
+          "m_threshold" : 0.855532 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1AspectRatio" ,
+            "m_threshold" : 32.8175 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2AreaRatio" ,
+              "m_threshold" : 0.00770092 ,
+              "m_scoresIfHigher" : [ -0.958075 , 0.958075 ] ,
+              "m_scoresIfLower" : [ -2.39825 , 2.39825 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2Width" ,
+              "m_threshold" : 0.453645 ,
+              "m_scoresIfHigher" : [ 0.192122 , -0.192122 ] ,
+              "m_scoresIfLower" : [ -0.293358 , 0.293358 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1TopDistanceRatio" ,
+            "m_threshold" : 0.455311 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2Height" ,
+              "m_threshold" : 0.00505283 ,
+              "m_scoresIfHigher" : [ 0.274313 , -0.274313 ] ,
+              "m_scoresIfLower" : [ -0.381134 , 0.381134 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1Width" ,
+              "m_threshold" : 0.504328 ,
+              "m_scoresIfHigher" : [ 0.154141 , -0.154141 ] ,
+              "m_scoresIfLower" : [ -0.091394 , 0.0913939 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "BottomBottomDistance" ,
+          "m_threshold" : 0.049932 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "NumberOfNeighbors" ,
+            "m_threshold" : 1.5 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "BottomTopDistance" ,
+              "m_threshold" : 0.112743 ,
+              "m_scoresIfHigher" : [ -0.0624742 , 0.0624743 ] ,
+              "m_scoresIfLower" : [ 0.190113 , -0.190113 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2Width" ,
+              "m_threshold" : 0.250915 ,
+              "m_scoresIfHigher" : [ -0.140817 , 0.140817 ] ,
+              "m_scoresIfLower" : [ -0.518054 , 0.518054 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect2Height" ,
+            "m_threshold" : 0.00969628 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2Width" ,
+              "m_threshold" : 0.0105033 ,
+              "m_scoresIfHigher" : [ 0.334338 , -0.334338 ] ,
+              "m_scoresIfLower" : [ -0.775785 , 0.775785 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2AspectRatio" ,
+              "m_threshold" : 6.20027 ,
+              "m_scoresIfHigher" : [ -0.417645 , 0.417645 ] ,
+              "m_scoresIfLower" : [ 0.0943947 , -0.0943947 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "NumberOfNeighbors" ,
+          "m_threshold" : 12.5 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1Width" ,
+            "m_threshold" : 0.892964 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2TopDistanceRatio" ,
+              "m_threshold" : 0.658655 ,
+              "m_scoresIfHigher" : [ -1.89116 , 1.89116 ] ,
+              "m_scoresIfLower" : [ 0.492737 , -0.492737 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "CentroidDistance" ,
+              "m_threshold" : 0.360212 ,
+              "m_scoresIfHigher" : [ 0.0260526 , -0.0260526 ] ,
+              "m_scoresIfLower" : [ 0.484099 , -0.484099 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "CentroidDistance" ,
+            "m_threshold" : 0.279894 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1AreaRatio" ,
+              "m_threshold" : 0.0218634 ,
+              "m_scoresIfHigher" : [ 0.0411475 , -0.0411476 ] ,
+              "m_scoresIfLower" : [ -0.287169 , 0.287169 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "AreaRatio" ,
+              "m_threshold" : 2.30507e-07 ,
+              "m_scoresIfHigher" : [ -0.0341579 , 0.0341578 ] ,
+              "m_scoresIfLower" : [ 0.190522 , -0.190522 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "BottomTopDistance" ,
+          "m_threshold" : 0.484136 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1AreaRatio" ,
+            "m_threshold" : 0.036507 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1BottomDistanceRatio" ,
+              "m_threshold" : 0.159084 ,
+              "m_scoresIfHigher" : [ -0.247351 , 0.247351 ] ,
+              "m_scoresIfLower" : [ 1.21327 , -1.21327 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1BottomDistanceRatio" ,
+              "m_threshold" : 0.22953 ,
+              "m_scoresIfHigher" : [ -0.679435 , 0.679435 ] ,
+              "m_scoresIfLower" : [ -3.95039 , 3.95039 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "NumberOfNeighbors" ,
+            "m_threshold" : 7.5 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1Width" ,
+              "m_threshold" : 0.93705 ,
+              "m_scoresIfHigher" : [ -0.89003 , 0.890037 ] ,
+              "m_scoresIfLower" : [ 0.198969 , -0.198969 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "BottomTopDistance" ,
+              "m_threshold" : 0.0691046 ,
+              "m_scoresIfHigher" : [ -0.118285 , 0.118285 ] ,
+              "m_scoresIfLower" : [ 0.0676485 , -0.0676484 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "NumberOfNeighbors" ,
+          "m_threshold" : 0.5 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "TopTopDistance" ,
+            "m_threshold" : 0.100207 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "NumberOfNeighbors" ,
+              "m_threshold" : 2.5 ,
+              "m_scoresIfHigher" : [ 0.0157677 , -0.0157676 ] ,
+              "m_scoresIfLower" : [ -0.214146 , 0.214146 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1Height" ,
+              "m_threshold" : 0.00825688 ,
+              "m_scoresIfHigher" : [ 0.217987 , -0.217987 ] ,
+              "m_scoresIfLower" : [ -0.136258 , 0.136258 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "VerticalOverlapYDistance" ,
+            "m_threshold" : 0.0197341 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1TopDistanceRatio" ,
+              "m_threshold" : 0.410995 ,
+              "m_scoresIfHigher" : [ -0.483143 , 0.483143 ] ,
+              "m_scoresIfLower" : [ -1.03816 , 1.03816 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "VerticalOverlapXDistance" ,
+              "m_threshold" : 0.0434265 ,
+              "m_scoresIfHigher" : [ 0.145094 , -0.145094 ] ,
+              "m_scoresIfLower" : [ -0.24839 , 0.24839 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "Rect2AspectRatio" ,
+          "m_threshold" : 37.9418 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect2Height" ,
+            "m_threshold" : 0.00273723 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1BottomDistanceRatio" ,
+              "m_threshold" : 0.443289 ,
+              "m_scoresIfHigher" : [ -1.07978 , 1.07978 ] ,
+              "m_scoresIfLower" : [ -0.193629 , 0.193629 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2TopDistanceRatio" ,
+              "m_threshold" : 0.764119 ,
+              "m_scoresIfHigher" : [ -3.27834 , 3.27851 ] ,
+              "m_scoresIfLower" : [ 0.803644 , -0.803644 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "VerticalOverlapXDistance" ,
+            "m_threshold" : 0.39247 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "AreaRatio" ,
+              "m_threshold" : 2.59603e-07 ,
+              "m_scoresIfHigher" : [ -0.0366679 , 0.0366676 ] ,
+              "m_scoresIfLower" : [ 0.357666 , -0.357666 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2Height" ,
+              "m_threshold" : 0.0377412 ,
+              "m_scoresIfHigher" : [ -0.174366 , 0.174367 ] ,
+              "m_scoresIfLower" : [ 0.0517971 , -0.0517972 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "Rect1AreaRatio" ,
+          "m_threshold" : 0.00230944 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1AspectRatio" ,
+            "m_threshold" : 42.492 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2TopDistanceRatio" ,
+              "m_threshold" : 0.694918 ,
+              "m_scoresIfHigher" : [ -1.70807 , 1.70807 ] ,
+              "m_scoresIfLower" : [ -0.614108 , 0.614108 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "RightLeftDistance" ,
+              "m_threshold" : 0.697015 ,
+              "m_scoresIfHigher" : [ 0.143714 , -0.143714 ] ,
+              "m_scoresIfLower" : [ -0.0811012 , 0.0811012 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect2BottomDistanceRatio" ,
+            "m_threshold" : 0.908197 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2AreaRatio" ,
+              "m_threshold" : 0.00144872 ,
+              "m_scoresIfHigher" : [ -0.313408 , 0.313408 ] ,
+              "m_scoresIfLower" : [ -1.57814 , 1.57814 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1TopDistanceRatio" ,
+              "m_threshold" : 0.159094 ,
+              "m_scoresIfHigher" : [ 0.205051 , -0.205051 ] ,
+              "m_scoresIfLower" : [ -0.336051 , 0.336051 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "HorizontalOverlapYDistance" ,
+          "m_threshold" : 0.000492105 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "HorizontalOverlapXDistance" ,
+            "m_threshold" : 0.0597198 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "TopBottomDistance" ,
+              "m_threshold" : 0.0319301 ,
+              "m_scoresIfHigher" : [ -0.233798 , 0.233798 ] ,
+              "m_scoresIfLower" : [ 0.296902 , -0.296902 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "AreaRatio" ,
+              "m_threshold" : 2.48764e-07 ,
+              "m_scoresIfHigher" : [ 0.396496 , -0.396496 ] ,
+              "m_scoresIfLower" : [ 1.26407 , -1.26407 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1Width" ,
+            "m_threshold" : 0.00363857 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "NumberOfNeighbors" ,
+              "m_threshold" : 2.5 ,
+              "m_scoresIfHigher" : [ 0.0428856 , -0.0428856 ] ,
+              "m_scoresIfLower" : [ -0.0929038 , 0.0929038 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1AreaRatio" ,
+              "m_threshold" : 2.03003e-05 ,
+              "m_scoresIfHigher" : [ -3.92743 , 3.92744 ] ,
+              "m_scoresIfLower" : [ 0.257559 , -0.257559 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "BottomTopDistance" ,
+          "m_threshold" : 0.146637 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1AreaRatio" ,
+            "m_threshold" : 0.00229888 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1Width" ,
+              "m_threshold" : 0.392149 ,
+              "m_scoresIfHigher" : [ -0.0182578 , 0.0182579 ] ,
+              "m_scoresIfLower" : [ -0.29732 , 0.29732 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1BottomDistanceRatio" ,
+              "m_threshold" : 0.125089 ,
+              "m_scoresIfHigher" : [ 0.125927 , -0.125927 ] ,
+              "m_scoresIfLower" : [ -3.4006 , 3.4006 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "NumberOfNeighbors" ,
+            "m_threshold" : 2.5 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1Height" ,
+              "m_threshold" : 0.00512609 ,
+              "m_scoresIfHigher" : [ 0.21532 , -0.21532 ] ,
+              "m_scoresIfLower" : [ -0.159193 , 0.159193 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "LeftLeftDistance" ,
+              "m_threshold" : 0.186304 ,
+              "m_scoresIfHigher" : [ -0.185603 , 0.185603 ] ,
+              "m_scoresIfLower" : [ 0.0452497 , -0.0452497 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "BottomTopDistance" ,
+          "m_threshold" : 0.00599743 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "NumberOfNeighbors" ,
+            "m_threshold" : 0.5 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "BottomBottomDistance" ,
+              "m_threshold" : 0.0882104 ,
+              "m_scoresIfHigher" : [ -0.0246958 , 0.0246958 ] ,
+              "m_scoresIfLower" : [ 0.145331 , -0.145331 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "TopTopDistance" ,
+              "m_threshold" : 0.0457208 ,
+              "m_scoresIfHigher" : [ -0.51478 , 0.514781 ] ,
+              "m_scoresIfLower" : [ 0.0336476 , -0.0336472 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "VerticalOverlapXDistance" ,
+            "m_threshold" : 0.0492902 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "AreaRatio" ,
+              "m_threshold" : 2.32693e-07 ,
+              "m_scoresIfHigher" : [ 0.257023 , -0.257024 ] ,
+              "m_scoresIfLower" : [ 0.868551 , -0.868551 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2Width" ,
+              "m_threshold" : 0.394209 ,
+              "m_scoresIfHigher" : [ 0.408937 , -0.408938 ] ,
+              "m_scoresIfLower" : [ -0.111959 , 0.111959 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "LeftLeftDistance" ,
+          "m_threshold" : 0.00533926 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect2AspectRatio" ,
+            "m_threshold" : 12.8185 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2TopDistanceRatio" ,
+              "m_threshold" : 0.951164 ,
+              "m_scoresIfHigher" : [ -2.90283 , 2.90286 ] ,
+              "m_scoresIfLower" : [ -0.182522 , 0.182522 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1BottomDistanceRatio" ,
+              "m_threshold" : 0.490395 ,
+              "m_scoresIfHigher" : [ 0.110462 , -0.110462 ] ,
+              "m_scoresIfLower" : [ -0.0405627 , 0.0405627 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1Height" ,
+            "m_threshold" : 0.0174025 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1BottomDistanceRatio" ,
+              "m_threshold" : 0.11314 ,
+              "m_scoresIfHigher" : [ -0.0235626 , 0.0235626 ] ,
+              "m_scoresIfLower" : [ 0.491371 , -0.491371 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2AspectRatio" ,
+              "m_threshold" : 20.0981 ,
+              "m_scoresIfHigher" : [ 0.800582 , -0.800581 ] ,
+              "m_scoresIfLower" : [ 0.201409 , -0.201409 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "NumberOfNeighbors" ,
+          "m_threshold" : 5.5 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "TopTopDistance" ,
+            "m_threshold" : 0.282234 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1BottomDistanceRatio" ,
+              "m_threshold" : 0.124118 ,
+              "m_scoresIfHigher" : [ -0.039579 , 0.0395787 ] ,
+              "m_scoresIfLower" : [ -1.6442 , 1.6442 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2TopDistanceRatio" ,
+              "m_threshold" : 0.900072 ,
+              "m_scoresIfHigher" : [ -0.542872 , 0.542869 ] ,
+              "m_scoresIfLower" : [ 0.231694 , -0.231694 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "BottomTopDistance" ,
+            "m_threshold" : 0.110603 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "RightLeftDistance" ,
+              "m_threshold" : 0.553264 ,
+              "m_scoresIfHigher" : [ 0.0485275 , -0.0485271 ] ,
+              "m_scoresIfLower" : [ -0.268695 , 0.268695 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2Height" ,
+              "m_threshold" : 0.00969628 ,
+              "m_scoresIfHigher" : [ 0.0475981 , -0.047598 ] ,
+              "m_scoresIfLower" : [ -0.23293 , 0.23293 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "NumberOfNeighbors" ,
+          "m_threshold" : 17.5 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1TopDistanceRatio" ,
+            "m_threshold" : 0.302852 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2BottomDistanceRatio" ,
+              "m_threshold" : 0.90833 ,
+              "m_scoresIfHigher" : [ -0.387077 , 0.387078 ] ,
+              "m_scoresIfLower" : [ 0.397707 , -0.397708 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2Width" ,
+              "m_threshold" : 0.423431 ,
+              "m_scoresIfHigher" : [ 0.275394 , -0.275394 ] ,
+              "m_scoresIfLower" : [ -1.19234 , 1.19234 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "LeftLeftDistance" ,
+            "m_threshold" : 0.3148 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2TopDistanceRatio" ,
+              "m_threshold" : 0.674519 ,
+              "m_scoresIfHigher" : [ -0.23786 , 0.23786 ] ,
+              "m_scoresIfLower" : [ -0.0123335 , 0.0123336 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2Height" ,
+              "m_threshold" : 0.00881357 ,
+              "m_scoresIfHigher" : [ 0.0501606 , -0.0501607 ] ,
+              "m_scoresIfLower" : [ -0.211887 , 0.211887 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "Rect2AreaRatio" ,
+          "m_threshold" : 3.16036e-05 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect2AreaRatio" ,
+            "m_threshold" : 0.000184359 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "TopTopDistance" ,
+              "m_threshold" : 0.0085647 ,
+              "m_scoresIfHigher" : [ 0.00302198 , -0.00302204 ] ,
+              "m_scoresIfLower" : [ 0.433747 , -0.433747 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1AreaRatio" ,
+              "m_threshold" : 0.000205282 ,
+              "m_scoresIfHigher" : [ -0.164344 , 0.164344 ] ,
+              "m_scoresIfLower" : [ -0.769487 , 0.769487 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1BottomDistanceRatio" ,
+            "m_threshold" : 0.496081 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2Height" ,
+              "m_threshold" : 0.00199914 ,
+              "m_scoresIfHigher" : [ 1.07418 , -1.07418 ] ,
+              "m_scoresIfLower" : [ 3.37896 , -3.37896 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1Width" ,
+              "m_threshold" : 0.485516 ,
+              "m_scoresIfHigher" : [ 0.721411 , -0.721411 ] ,
+              "m_scoresIfLower" : [ -0.023965 , 0.023965 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "Rect2Height" ,
+          "m_threshold" : 0.374599 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect2TopDistanceRatio" ,
+            "m_threshold" : 0.35289 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1BottomDistanceRatio" ,
+              "m_threshold" : 0.260702 ,
+              "m_scoresIfHigher" : [ 0.346073 , -0.346072 ] ,
+              "m_scoresIfLower" : [ -2.20599 , 2.20599 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "VerticalOverlapYDistance" ,
+              "m_threshold" : 0.12685 ,
+              "m_scoresIfHigher" : [ -1.93858 , 1.93854 ] ,
+              "m_scoresIfLower" : [ 1.17214 , -1.17214 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "RightRightDistance" ,
+            "m_threshold" : 0.0862409 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "LeftRightDistance" ,
+              "m_threshold" : 0.481961 ,
+              "m_scoresIfHigher" : [ -0.118006 , 0.118006 ] ,
+              "m_scoresIfLower" : [ 0.0298558 , -0.0298558 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "AreaRatio" ,
+              "m_threshold" : 2.48502e-07 ,
+              "m_scoresIfHigher" : [ -0.0426935 , 0.0426935 ] ,
+              "m_scoresIfLower" : [ 0.248933 , -0.248933 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "NumberOfNeighbors" ,
+          "m_threshold" : 27.5 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1TopDistanceRatio" ,
+            "m_threshold" : 0.302852 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2Height" ,
+              "m_threshold" : 0.00199516 ,
+              "m_scoresIfHigher" : [ 0.385915 , -0.385915 ] ,
+              "m_scoresIfLower" : [ 2.23058 , -2.23058 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "CentroidDistance" ,
+              "m_threshold" : 0.312959 ,
+              "m_scoresIfHigher" : [ -3.307 , 3.307 ] ,
+              "m_scoresIfLower" : [ -0.755888 , 0.755888 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1BottomDistanceRatio" ,
+            "m_threshold" : 0.490395 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2BottomDistanceRatio" ,
+              "m_threshold" : 0.677737 ,
+              "m_scoresIfHigher" : [ -0.00210438 , 0.00210426 ] ,
+              "m_scoresIfLower" : [ 0.402623 , -0.402623 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "AreaRatio" ,
+              "m_threshold" : 9.24577e-07 ,
+              "m_scoresIfHigher" : [ 0.0773553 , -0.0773555 ] ,
+              "m_scoresIfLower" : [ -0.0958417 , 0.0958416 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "Rect1Width" ,
+          "m_threshold" : 0.938044 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect2Height" ,
+            "m_threshold" : 0.022584 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "OverlappingArea" ,
+              "m_threshold" : 0.00165789 ,
+              "m_scoresIfHigher" : [ 0.800201 , -0.8002 ] ,
+              "m_scoresIfLower" : [ -0.215227 , 0.215227 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "CentroidDistance" ,
+              "m_threshold" : 0.428927 ,
+              "m_scoresIfHigher" : [ -2.98174 , 2.98161 ] ,
+              "m_scoresIfLower" : [ -0.574131 , 0.57413 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "RightLeftDistance" ,
+            "m_threshold" : 0.771469 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1BottomDistanceRatio" ,
+              "m_threshold" : 0.121889 ,
+              "m_scoresIfHigher" : [ 0.163675 , -0.163675 ] ,
+              "m_scoresIfLower" : [ -0.540324 , 0.540324 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1TopDistanceRatio" ,
+              "m_threshold" : 0.0431243 ,
+              "m_scoresIfHigher" : [ -0.0292059 , 0.0292059 ] ,
+              "m_scoresIfLower" : [ 0.249737 , -0.249737 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "NumberOfNeighbors" ,
+          "m_threshold" : 3.5 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "BottomBottomDistance" ,
+            "m_threshold" : 0.248501 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1AreaRatio" ,
+              "m_threshold" : 0.0299751 ,
+              "m_scoresIfHigher" : [ 0.134687 , -0.134687 ] ,
+              "m_scoresIfLower" : [ -0.094823 , 0.0948231 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2BottomDistanceRatio" ,
+              "m_threshold" : 0.375858 ,
+              "m_scoresIfHigher" : [ 0.173685 , -0.173685 ] ,
+              "m_scoresIfLower" : [ -0.153522 , 0.153522 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect2TopDistanceRatio" ,
+            "m_threshold" : 0.291919 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "HorizontalOverlapYDistance" ,
+              "m_threshold" : 0.00303424 ,
+              "m_scoresIfHigher" : [ 0.333053 , -0.333054 ] ,
+              "m_scoresIfLower" : [ -0.124331 , 0.124331 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "AreaRatio" ,
+              "m_threshold" : 2.33615e-07 ,
+              "m_scoresIfHigher" : [ -0.0569983 , 0.0569981 ] ,
+              "m_scoresIfLower" : [ 0.272459 , -0.272459 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "BottomTopDistance" ,
+          "m_threshold" : 0.00428755 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "NumberOfNeighbors" ,
+            "m_threshold" : 0.5 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "BottomTopDistance" ,
+              "m_threshold" : 0.0502338 ,
+              "m_scoresIfHigher" : [ -0.0158792 , 0.0158792 ] ,
+              "m_scoresIfLower" : [ 0.114546 , -0.114546 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "BottomTopDistance" ,
+              "m_threshold" : 0.026244 ,
+              "m_scoresIfHigher" : [ -0.52593 , 0.52593 ] ,
+              "m_scoresIfLower" : [ -0.0647116 , 0.0647114 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "VerticalOverlapXDistance" ,
+            "m_threshold" : 0.0371492 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "CentroidDistance" ,
+              "m_threshold" : 0.138727 ,
+              "m_scoresIfHigher" : [ 0.775414 , -0.775414 ] ,
+              "m_scoresIfLower" : [ 0.233397 , -0.233397 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2BottomDistanceRatio" ,
+              "m_threshold" : 0.151662 ,
+              "m_scoresIfHigher" : [ 0.0705955 , -0.0705956 ] ,
+              "m_scoresIfLower" : [ -0.418114 , 0.418114 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "NumberOfNeighbors" ,
+          "m_threshold" : 6.5 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "CentroidDistance" ,
+            "m_threshold" : 0.327143 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1TopDistanceRatio" ,
+              "m_threshold" : 0.379817 ,
+              "m_scoresIfHigher" : [ 0.0982243 , -0.0982242 ] ,
+              "m_scoresIfLower" : [ -0.200526 , 0.200526 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1Height" ,
+              "m_threshold" : 0.0188114 ,
+              "m_scoresIfHigher" : [ 0.0739271 , -0.0739272 ] ,
+              "m_scoresIfLower" : [ 0.320105 , -0.320105 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "LeftLeftDistance" ,
+            "m_threshold" : 0.108955 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1AspectRatio" ,
+              "m_threshold" : 6.31602 ,
+              "m_scoresIfHigher" : [ -0.176993 , 0.176993 ] ,
+              "m_scoresIfLower" : [ -0.00412636 , 0.00412646 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1BottomDistanceRatio" ,
+              "m_threshold" : 0.101997 ,
+              "m_scoresIfHigher" : [ -0.000507702 , 0.000507752 ] ,
+              "m_scoresIfLower" : [ 0.233782 , -0.233782 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "Rect1AspectRatio" ,
+          "m_threshold" : 35.5384 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect2BottomDistanceRatio" ,
+            "m_threshold" : 0.784302 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2Width" ,
+              "m_threshold" : 0.570839 ,
+              "m_scoresIfHigher" : [ -0.435498 , 0.435498 ] ,
+              "m_scoresIfLower" : [ -1.61398 , 1.61398 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1Height" ,
+              "m_threshold" : 0.00148545 ,
+              "m_scoresIfHigher" : [ -0.185305 , 0.185305 ] ,
+              "m_scoresIfLower" : [ 1.72936 , -1.72936 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1BottomDistanceRatio" ,
+            "m_threshold" : 0.490395 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1Height" ,
+              "m_threshold" : 0.00367478 ,
+              "m_scoresIfHigher" : [ 0.103759 , -0.103759 ] ,
+              "m_scoresIfLower" : [ -0.749564 , 0.749564 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1Height" ,
+              "m_threshold" : 0.0128489 ,
+              "m_scoresIfHigher" : [ -0.0602932 , 0.0602933 ] ,
+              "m_scoresIfLower" : [ 0.213536 , -0.213535 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "Rect2AspectRatio" ,
+          "m_threshold" : 2.29088 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect2AreaRatio" ,
+            "m_threshold" : 0.000115534 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1TopDistanceRatio" ,
+              "m_threshold" : 0.476779 ,
+              "m_scoresIfHigher" : [ 0.13708 , -0.13708 ] ,
+              "m_scoresIfLower" : [ -0.00812241 , 0.00812233 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2TopDistanceRatio" ,
+              "m_threshold" : 0.681889 ,
+              "m_scoresIfHigher" : [ -0.6092 , 0.6092 ] ,
+              "m_scoresIfLower" : [ -0.0309836 , 0.0309835 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect2Height" ,
+            "m_threshold" : 0.0381652 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2Width" ,
+              "m_threshold" : 0.378098 ,
+              "m_scoresIfHigher" : [ 0.327398 , -0.327397 ] ,
+              "m_scoresIfLower" : [ -0.494035 , 0.494035 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2AspectRatio" ,
+              "m_threshold" : 1.01256 ,
+              "m_scoresIfHigher" : [ 0.0891617 , -0.0891617 ] ,
+              "m_scoresIfLower" : [ -1.01948 , 1.01948 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "NumberOfNeighbors" ,
+          "m_threshold" : 29.5 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "TopBottomDistance" ,
+            "m_threshold" : 0.429916 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2AreaRatio" ,
+              "m_threshold" : 0.0349567 ,
+              "m_scoresIfHigher" : [ 1.15682 , -1.15682 ] ,
+              "m_scoresIfLower" : [ -0.535075 , 0.535075 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2Height" ,
+              "m_threshold" : 0.0122909 ,
+              "m_scoresIfHigher" : [ 0.329671 , -0.329671 ] ,
+              "m_scoresIfLower" : [ 1.07388 , -1.07388 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "RightRightDistance" ,
+            "m_threshold" : 0.050591 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "TopTopDistance" ,
+              "m_threshold" : 0.0445097 ,
+              "m_scoresIfHigher" : [ -0.0440071 , 0.044007 ] ,
+              "m_scoresIfLower" : [ 0.116487 , -0.116487 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "AreaRatio" ,
+              "m_threshold" : 2.32168e-07 ,
+              "m_scoresIfHigher" : [ -0.0281041 , 0.0281042 ] ,
+              "m_scoresIfLower" : [ 0.245401 , -0.245401 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "NumberOfNeighbors" ,
+          "m_threshold" : 1.5 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "BottomTopDistance" ,
+            "m_threshold" : 0.120775 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1AreaRatio" ,
+              "m_threshold" : 0.0235381 ,
+              "m_scoresIfHigher" : [ 0.0781431 , -0.0781432 ] ,
+              "m_scoresIfLower" : [ -0.0608425 , 0.0608425 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1TopDistanceRatio" ,
+              "m_threshold" : 0.829844 ,
+              "m_scoresIfHigher" : [ -0.471785 , 0.47178 ] ,
+              "m_scoresIfLower" : [ 0.110646 , -0.110646 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "BottomTopDistance" ,
+            "m_threshold" : 0.0499437 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2Width" ,
+              "m_threshold" : 0.360779 ,
+              "m_scoresIfHigher" : [ -0.0444169 , 0.0444169 ] ,
+              "m_scoresIfLower" : [ -0.410513 , 0.410513 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1Height" ,
+              "m_threshold" : 0.00993705 ,
+              "m_scoresIfHigher" : [ 0.00846681 , -0.00846687 ] ,
+              "m_scoresIfLower" : [ -0.264786 , 0.264786 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "NumberOfNeighbors" ,
+          "m_threshold" : 13.5 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "TopBottomDistance" ,
+            "m_threshold" : 0.120086 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1Width" ,
+              "m_threshold" : 0.946833 ,
+              "m_scoresIfHigher" : [ -3.20058 , 3.20001 ] ,
+              "m_scoresIfLower" : [ 0.128425 , -0.128425 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1TopDistanceRatio" ,
+              "m_threshold" : 0.697462 ,
+              "m_scoresIfHigher" : [ 0.821216 , -0.821217 ] ,
+              "m_scoresIfLower" : [ 3.3252 , -3.3252 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1AreaRatio" ,
+            "m_threshold" : 0.0214888 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1Width" ,
+              "m_threshold" : 0.923967 ,
+              "m_scoresIfHigher" : [ -0.180613 , 0.180612 ] ,
+              "m_scoresIfLower" : [ 0.0903653 , -0.0903652 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1AspectRatio" ,
+              "m_threshold" : 5.79317 ,
+              "m_scoresIfHigher" : [ -0.0950474 , 0.0950473 ] ,
+              "m_scoresIfLower" : [ 0.0238894 , -0.0238893 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "Rect1BottomDistanceRatio" ,
+          "m_threshold" : 0.00929138 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1TopDistanceRatio" ,
+            "m_threshold" : -0.00757437 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "TopTopDistance" ,
+              "m_threshold" : 0.0085647 ,
+              "m_scoresIfHigher" : [ -0.00789455 , 0.00789457 ] ,
+              "m_scoresIfLower" : [ 0.266291 , -0.266291 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "LeftRightDistance" ,
+              "m_threshold" : 0.695251 ,
+              "m_scoresIfHigher" : [ 0.979043 , -0.979043 ] ,
+              "m_scoresIfLower" : [ 0.284367 , -0.284367 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "CentroidDistance" ,
+            "m_threshold" : 0.0510002 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "CentroidDistance" ,
+              "m_threshold" : 0.0516692 ,
+              "m_scoresIfHigher" : [ -3.1481 , 3.1481 ] ,
+              "m_scoresIfLower" : [ -1.94833 , 1.94833 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "CentroidDistance" ,
+              "m_threshold" : 0.0240695 ,
+              "m_scoresIfHigher" : [ -1.15084 , 1.15084 ] ,
+              "m_scoresIfLower" : [ -2.07439 , 2.07439 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "Rect1Width" ,
+          "m_threshold" : 0.00482801 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect2Width" ,
+            "m_threshold" : 0.00363857 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2AreaRatio" ,
+              "m_threshold" : 3.23672e-05 ,
+              "m_scoresIfHigher" : [ 0.0006554 , -0.000655514 ] ,
+              "m_scoresIfLower" : [ 0.42513 , -0.42513 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2AreaRatio" ,
+              "m_threshold" : 1.76248e-05 ,
+              "m_scoresIfHigher" : [ -1.4949 , 1.4949 ] ,
+              "m_scoresIfLower" : [ 0.801482 , -0.801482 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect1AreaRatio" ,
+            "m_threshold" : 3.4332e-05 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "TopTopDistance" ,
+              "m_threshold" : 0.0196206 ,
+              "m_scoresIfHigher" : [ -3.71816 , 3.71816 ] ,
+              "m_scoresIfLower" : [ -0.71517 , 0.71517 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1Height" ,
+              "m_threshold" : 0.00627944 ,
+              "m_scoresIfHigher" : [ -0.477838 , 0.477838 ] ,
+              "m_scoresIfLower" : [ 0.622837 , -0.622837 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "Rect2BottomDistanceRatio" ,
+          "m_threshold" : 1.00969 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect2AspectRatio" ,
+            "m_threshold" : 5.71035 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "CentroidDistance" ,
+              "m_threshold" : 0.430363 ,
+              "m_scoresIfHigher" : [ 0.820666 , -0.820667 ] ,
+              "m_scoresIfLower" : [ 3.12656 , -3.12656 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2TopDistanceRatio" ,
+              "m_threshold" : 0.967211 ,
+              "m_scoresIfHigher" : [ 2.2467 , -2.2467 ] ,
+              "m_scoresIfLower" : [ 0.28056 , -0.28056 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "Rect2TopDistanceRatio" ,
+            "m_threshold" : 0.960006 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "BottomBottomDistance" ,
+              "m_threshold" : 0.0571828 ,
+              "m_scoresIfHigher" : [ -3.60242 , 3.60239 ] ,
+              "m_scoresIfLower" : [ 0.00244116 , -0.002442 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2Height" ,
+              "m_threshold" : 0.0388253 ,
+              "m_scoresIfHigher" : [ -0.0510691 , 0.0510687 ] ,
+              "m_scoresIfLower" : [ 0.0294186 , -0.0294185 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "OverlappingArea" ,
+          "m_threshold" : 0.00374921 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "LeftRightDistance" ,
+            "m_threshold" : 0.550152 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "HorizontalOverlapYDistance" ,
+              "m_threshold" : 0.0159414 ,
+              "m_scoresIfHigher" : [ 1.48083 , -1.48083 ] ,
+              "m_scoresIfLower" : [ 0.550261 , -0.550261 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "CentroidDistance" ,
+              "m_threshold" : 0.213799 ,
+              "m_scoresIfHigher" : [ 1.77368 , -1.77369 ] ,
+              "m_scoresIfLower" : [ -0.0401197 , 0.0401197 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "LeftRightDistance" ,
+            "m_threshold" : 0.820418 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "RightLeftDistance" ,
+              "m_threshold" : 0.181486 ,
+              "m_scoresIfHigher" : [ -0.16736 , 0.16736 ] ,
+              "m_scoresIfLower" : [ 0.207174 , -0.207174 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "VerticalOverlapXDistance" ,
+              "m_threshold" : 0.391577 ,
+              "m_scoresIfHigher" : [ 0.191982 , -0.191982 ] ,
+              "m_scoresIfLower" : [ -0.00913856 , 0.00913872 ]
+            }
+          }
+        } ,
+        { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+          "m_num" : "NumberOfNeighbors" ,
+          "m_threshold" : 4.5 ,
+          "child(ON)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "TopTopDistance" ,
+            "m_threshold" : 0.180619 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect1BottomDistanceRatio" ,
+              "m_threshold" : 0.110937 ,
+              "m_scoresIfHigher" : [ 0.0117185 , -0.0117184 ] ,
+              "m_scoresIfLower" : [ -0.781531 , 0.781531 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2TopDistanceRatio" ,
+              "m_threshold" : 0.835735 ,
+              "m_scoresIfHigher" : [ -0.293113 , 0.293112 ] ,
+              "m_scoresIfLower" : [ 0.211832 , -0.211832 ]
+            }
+          } ,
+          "child(OFF)" :
+          { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+            "m_num" : "VerticalOverlapXDistance" ,
+            "m_threshold" : 0.00479329 ,
+            "child(ON)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "Rect2TopDistanceRatio" ,
+              "m_threshold" : 0.210002 ,
+              "m_scoresIfHigher" : [ -0.0354246 , 0.0354246 ] ,
+              "m_scoresIfLower" : [ 0.17102 , -0.17102 ]
+            } ,
+            "child(OFF)" :
+            { "__class__" : "ML_BinaryDecisionTree{ML_StumpClassifier}" ,
+              "m_num" : "BottomBottomDistance" ,
+              "m_threshold" : 0.0137635 ,
+              "m_scoresIfHigher" : [ -0.178582 , 0.178582 ] ,
+              "m_scoresIfLower" : [ 0.204312 , -0.204312 ]
+            }
+          }
+        }
+      ] ,
+      "m_weights" : [ 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 , 0.25 ]
+    } ,
+    { "__class__" : "ML_ScoreMargin"
+    } ,
+    { "__class__" : "ML_Sigmoid" ,
+      "factor" : 0.778523 ,
+      "bias" : 0.387331
+    }
+  ]
+}

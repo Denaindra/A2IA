@@ -1,0 +1,19 @@
+[MaskTable]
+productName = A2iA FieldReader
+productVersion = 6
+productRelease = 0
+keyType = String
+
+[MaskTable.defaultDefinition]
+imageName = userselection_.lst
+
+[MaskTable.defaultDefinition.doc]
+documentType = SingleField
+
+[MaskTable.defaultDefinition.doc.documentTypeInfo.CaseSingleField.field]
+fieldType = Amount
+optimisation = MaximizeAccuracy
+
+[MaskTable.defaultDefinition.doc.documentTypeInfo.CaseSingleField.field.fieldInfo]
+country = SG
+

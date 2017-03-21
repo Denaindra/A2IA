@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<Numerics>
+<Primitive name="LOGO">
+	<snippet file="Data\numerics\ING_180.tif"/>
+	<rect x="nc*0.75" y="nl*0.75" width="nc*0.25" height="nl*0.25"/>
+</Primitive>
+</Numerics>
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<Numerics>
+<Primitive name="UTIL_AREA_SIZE">
+</Primitive>
+<Primitive name="HORIZ_VECTOR_LENGTH">
+</Primitive>
+<Primitive name="RATIO_FUNDAMENTAL_TYPES">
+	<prim_type name="HW"/>
+	<prim_type name="MP"/>
+</Primitive>
+<Primitive name="CHECK">
+</Primitive>
+</Numerics>
+

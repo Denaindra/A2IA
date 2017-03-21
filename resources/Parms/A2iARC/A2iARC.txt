@@ -1,0 +1,2409 @@
+Define ProductBuild "1527.release"
+Define ProductName "A2iA FieldReader"
+Define ProductRelease "0"
+Define ProductVersion "6"
+Typedef tbuffer Buffer
+
+
+Typedef tbyte Byte
+
+
+Typedef tchar Char
+
+
+Typedef tstring Dir
+
+
+Typedef tstring File
+
+
+Typedef tstring SaveFile
+
+
+Typedef tfloat Float
+
+
+Typedef tint Int
+
+
+Typedef tstring String
+
+
+Typedef tstring UserId
+
+
+
+// Boolean type
+Begin Enum Boolean
+  Yes
+  No
+End Enum Boolean
+
+
+// Nationality specification
+Begin Enum Country
+  US   // United States
+  France   // France
+  UK   // United Kingdom
+  Europe   // Europe
+  HK   // Hong Kong
+  AU   // Australia
+  IE   // Ireland
+  CA   // Canada
+  BR   // Brazil
+  PT   // Portugal
+  MX   // Mexico
+  NL   // Netherland
+  TH   // Thailand
+  DE   // Germany
+  NC   // New Caledonia
+  CL   // Chile
+  BE   // Belgium
+  IT   // Italy
+  SG   // Singapore
+  MY   // Malaysia
+  IN   // India
+  ZA   // South Africa
+  Generic   // Generic
+  SP   // Spain
+  CO   // Columbia
+  DO   // Dominican Republic
+  GR   // Greece
+  KE   // Kenya
+  AT   // Austria
+  DK   // Denmark
+  LU   // Luxemburg
+  RU   // Russian Federation
+  SE   // Sweden
+  PL   // Poland
+  AD   // Andorra
+  FI   // Finland
+  RO   // Romania
+  BG   // Bulgaria
+  CH   // Switzerland
+  CY   // Cyprus
+  LT   // Lithuania
+  CZ   // Czech Republic
+  SI   // Slovenia
+  SK   // Slovakia
+  LV   // Latvia
+  HU   // Hungary
+  EC   // Ecuador
+  GenericArabic   // Generic Arabic
+  NZ   // New Zealand
+  TN   // Tunisia
+End Enum Country
+
+
+Typedef tstring PersistentId
+
+
+Typedef tstring PrivatePersistentId
+
+
+// Error Return codes
+Begin Enum Err
+  BadVersion   // Incompatible version
+  BadPlatform   // Unsupported Platform
+  BadType   // Unexpected type
+  BadParameters   // Bad parameter(s)
+  BadIdentifier   // Bad identifier
+  Limits   // Size exceeds limits
+  BadValue   // Unsupported value
+  OneSessionOnly   // One Session only
+  SingleRequestOnly   // One single request only
+  UninitializedSpecifications   // Uninitialized specifications
+  Comm   // Communication problem
+  CreateProcess   // Problem creating a process
+  NoRequest   // No pending request
+  NoAnsw   // No answer available for any request
+  Exception   // An exception was raised : please exit
+  Memory   // No memory left
+  NoProcess   // The request was not processed
+  CreateThread   // Could not create the thread
+  BadImageFormat   // Bad image format
+  BadValue_TransportModel   // Unsupported transport model
+  BadValue_Resolution   // Unsupported image resolution
+  BadValue_DocumentType   // Unsupported document type
+  BadValue_Country   // Unsupported country
+  BadValue_Currency   // Unsupported currency
+  Dongle   // Dongle problem
+  Brake   // Problem with speed checking
+  BadValue_LevelCount   // Unsupported number of gray levels
+  Load   // Error while loading data
+  Dump   // Error while dumping data
+  BadArrays   // Uninitialized or corrupted data
+  Unknown   // Unknown error
+  OncePerProcess   // This function should be called one time per process
+  Kill   // The process was killed
+  NoValue_ImageDimensions   // Explicit image dimensions are needed inside A2iARC_Image
+  BadValue_Origin   // Bad value for enum A2iARC_Origin
+  SuspendThread   // Unable to suspend a thread
+  BadValue_FieldType   // Unsupported field type
+  BadValue_WriteType   // Unsupported write type
+  BadValue_FontType   // Unsupported font type
+  BadValue_KeyType   // Unsupported key type
+  DifferentKeyType   // Different values for keyType for tab and document
+  BadValue_Unit   // Unsupported unit value
+  OpenFile   // Cannot open file
+  BadParameterFiles   // Bad parameter files
+  BadValue_InputFormat   // Unsupported input format
+  BadValue_ImageSourceType   // Unsupported image source type
+  BadValue_ImageSize   // Image size is not valid
+  BadValue_currencySignLocator   // Bad value for the field currencySignLocator
+  BadRegex   // Bad Syntax for Regular Expression
+  Duplicate   // Error while duplicating data
+  BadValue_ImageOrientation   // Bad value for the ImageOrientation
+  BadValue_ImageCleanStrip   // Bad value for the Clean strip field
+  BadValue_CleanZoneType   // Bad value for cleaning zone type
+  BadValue_CharacterFieldType   // Bad value for character field type
+  BadValue_InvalidFieldLength   // Bad value : minChar> maxChar
+  BadValue_OperatorType   // Bad value for operator type
+  OperandNotDefined   // Unknown name of operand
+  RecursiveOperator   // Recursive operators not allowed
+  BadValue_InternalProcessing   // Bad value for internal processing type
+  BadNumberOfOperands   // Bad number of operands in operator
+  BadType_Operand   // Bad operand type in operator
+  BadFieldId   // Bad field identificator
+  BadValue_Optimisation   // Bad Optimisation type
+  Fail   // Unspecified error
+  No_Vocabulary   // No vocabulary was provided
+  BadNumberOfLocationRules   // Only one location rule allowed per field.
+  DuplicateIds   // Fields, operators, and markers Ids are unique (or empty) in an Input structure.
+  BadValue_MarkerType   // Unimplemented marker type.
+  BadValue_LocationRuleType   // Unimplemented location rule type.
+  BadValue_HandwritingStyle   // Bad handwriting style.
+  UnexpectedVocabulary   // No vocabulary guided recognition in printed and hand printed fields.
+  BadMarkerInLocationRule   // Specified marker doesn't exist, or has the wrong type.
+  BadPersistentDataType   // Bad kind of persistent data (not implemented).
+  BadValue_AcceptPostDated   // acceptPostDated can't be set if a reference date is not provided.
+  BadValue_SpaceDetection   // Bad value for space detection.
+  BadValue_FieldImageQuality   // Bad value for field image quality.
+  BadValue_PrintedOCRType   // Bad value for printedOCRType. Only valid for Characters fields.
+  BadVocabulary_Cursive   // In cursive recognition, words can only be found in the dictionary.
+  BadVocabulary_Printed   // In machine or hand print recognition, words comefrom dictionary and recognition results.
+  BadValue_NumberOfWords   // The minimum number of words should be less than the maximum in a Word field.
+  BadIdentification   // The identification you gave is incorrect. Call A2iARC_Identify again.
+  Obsolete   // Obsolete API function, can not be used anymore.
+  WrongDLLPath   // Wrong DLL path for the postal integration unit.
+  PostalDictionaryNotFound   // No postal dictionary was found at the specified location.
+  PostalDictionaryLoadError   // Error during the loading of the postal dictionary.
+  HWWordVerificationNotImpl   // Handwritten word verification is not implemented.
+  BadActionType   // This action type is not supported for the specified persistent.
+  NoAddressBookFormat   // No format was passed for the address book.
+  NoPostalDictionary   // A postal dictionary is required to use this feature.
+  NoAddressBook   // An address book is required to use this feature.
+  WrongAddressBook   // The address book doesn't supply the correct data for the request.
+  OnlyOneWord   // In verification mode, the input dictionary must contain only one word.
+  RAD_Mismatch   // There was something incoherent with the Document Identification parameters
+  PersistentNotReady   // The persistent data is not ready for recognition (no training).
+  PostalDictionaryOutOfDate   // The postal dictionary is out of date.
+  RAD_BadVersion   // Document Identification files do not match current version. Need a retrain.
+  NotOk   // Global error in Channel with CPU
+  NoStatus   // Status of CPU not defined
+  Initializing   // CPU is still initializing
+  InitializingDongle   // CPU is still initializing dongle connection
+  InitializingPersistent   // CPU is initializing persistent data
+  DestrConnection   // Connection with remote machine was destroyed
+  ComServer   // Communication problem with Server
+  BusySocket   // Socket is already connected - busy socket
+  NoServer   // The target machine refused connection
+  UnknownServer   // Unknown hostname Server
+  CreateSocket   // Cannot create socket
+  BindSocket   // Cannot bind socket
+  SelectSocket   // Cannot select socket
+  ReceiveData   // Cannot receive data from Server
+  CloseServer   // Connection closed by Server
+  TimeoutRecvData   // Time out to receive data from the socket
+  TimeoutConnect   // Time of connection with a server has expired
+  TimeoutRequest   // The request timed out in the recognition engine and couldn't get intermediate results.
+  SetupDistPort   // Incorrect setup of distribution port
+  BadNet   // Bad network connection to computer
+  AccessDenied   // Access to remote machine denied
+  BadVersionNW   // Incompatible version on remote machine
+  BadParameterFilesNW   // Bad parameter files on remote machine
+  MemoryNW   // No memory left on remote machine
+  WrongProtocol   // Wrong protocol communication between API and Service
+  BadEventLog   // Bad parameter to event logging: see A2iARC_Boolean
+  DongleGlobal   // No more alive Dongle Server
+  ChannelTimeout   // Open Channel Timeout
+  NotAvailable   // Following feature not available for this country :
+  WriteFile   // Cannot write file
+  WrongKeyType   // Wrong KeyType value
+  KeyNotFound   // Key not found
+  TableDef_NotEmpty   // Table of definition not empty
+  A2iARCPgNotFound   // A2iARCPg not found
+  PageOutOfRange   // Number of pages in collection exceeds the limit maxPagesPerCollection
+  BadValue_WritingPeriod   // Bad writing period
+  CustomAddress_SemanticError   // CustomAddress semantic error
+  Database   // Error in A2iA database
+  BadVocabulary   // Vocabulary contains unsupported characters
+  InvalidLicense   // License is invalid
+  NoMorePagesAvailable   // No more pages are available in the ImageObject
+  DocumentTruncated   // The document is not entirely visible inside the photo.
+End Enum Err
+
+
+Begin Enum InvertedText
+  Yes
+  No
+  AutoDetect
+End Enum InvertedText
+
+
+Begin Enum ReverseValue
+  Yes
+  No
+  AutoDetect
+End Enum ReverseValue
+
+
+Begin Enum Gender
+  Female
+  Male
+End Enum Gender
+
+
+Begin Enum Currency
+  USD   // Us Dollar
+  FRF   // French Franc
+  EUR   // Euro currency
+  GBP   // Sterling pound
+  HKD   // Hong-Kong dollar
+  AUD   // Australian dollar
+  IEP   // Irish punt
+  CAD   // Canadian dollar
+  BRL   // Brazilian real
+  PTE   // Portugese Escudo
+  MXP   // Mexican Peso
+  NLG   // Dutch Guilder
+  THB   // Thai Baht
+  DEM   // Deutschmark
+  XPF   // Francs Comptoirs Francais du Pacifique
+  CLP   // Chilian Peso
+  BEF   // Belgian Franc
+  SGD   // Singapore Dollar
+  MYR   // Malaysian Ringgit
+  INR   // Indian Rupee
+  ZAR   // South African Rand
+  COP   // Columbian Pesos
+  DOP   // Dominican Pesos
+  KES   // Kenyan Shilling
+  NZD   // New Zealand Dollar
+  TND   // Tunisian dinar
+End Enum Currency
+
+
+// Use only for A2iA; describe a processing mode for operator.
+Begin Enum InternalProcessing
+  Soge
+End Enum InternalProcessing
+
+
+Begin Enum DataPersistence
+  Request
+  Persistent
+  None
+End Enum DataPersistence
+
+
+// -- All fields
+Begin Enum Optimisation
+  MaximizeSpeed
+  MaximizeAccuracy
+  OptimizeBinarization
+End Enum Optimisation
+
+
+// Source for an image
+Begin Enum ImageSourceType
+  File   // Get image from a file
+  Memory   // Image is available in memory
+  SharedMemory   // image is available as a shared memory object memory
+End Enum ImageSourceType
+
+
+// Input format for an image
+Begin Enum InputFormat
+  Byte   // Raw pixels buffer, interlaced Z-aligned components.
+  Tiff   // Tagged Image File format.
+  Bmp   // Microsoft Windows Bitmap format.
+  Jpeg   // Joint Photographic Experts Group format.
+  JP2   // JPEG-2000 JP2 format.
+  Png   // Portable Network Graphics format.
+  Pdf   // Portable Document format
+End Enum InputFormat
+
+
+// Model of transport
+Begin Enum TransportModel
+  Generic
+  Unisys_DP500
+  NCR_7780
+  BANCTEC
+  SEAC
+  JMD
+  CTS_ATHIC
+  CTS_A2IA
+  BANCTEC_UT
+  PANINI_S1
+  VIPS
+  Diebold
+  Standard_Register
+  Brazil_Special
+End Enum TransportModel
+
+
+Begin Enum ImageOrientation
+  LeftRight_TopBottom
+  RightLeft_TopBottom
+  RightLeft_BottomTop
+  LeftRight_BottomTop
+  TopBottom_LeftRight
+  TopBottom_RightLeft
+  BottomTop_RightLeft
+  BottomTop_LeftRight
+End Enum ImageOrientation
+
+
+Begin Struct Image
+Single ImageOrientation imageOrientation 
+Single ImageSourceType imageSourceType 
+Single InputFormat inputFormat 
+Single TransportModel transportModel 
+Single Boolean readResolutionFromImageHeader 
+Single Unsigned resolution_Dpi 
+Single Unsigned X_resolution_Dpi 
+Single Unsigned Y_resolution_Dpi 
+Single Unsigned levelCount ()  
+Single Unsigned rowSize ()  
+Single Unsigned colSize ()  
+Begin Union imageSourceTypeInfo (imageSourceType)
+Begin Case File
+Single File fileName 
+End Case File
+Begin Case Memory
+TabOf Byte buffer 
+End Case Memory
+Begin Case SharedMemory
+Single String sharedMemoryName 
+Single Unsigned imageSize 
+Single Unsigned offset 
+End Case SharedMemory
+End Union imageSourceTypeInfo
+Single String imageId ()  
+Begin Union inputFormatInfo (inputFormat)
+Begin Case Tiff
+Single Unsigned pageIndex 
+End Case Tiff
+Begin Case Pdf
+Single Unsigned pageIndex 
+End Case Pdf
+End Union inputFormatInfo
+End Struct Image
+
+
+Begin Enum CleanStrip
+  No   // default value
+  Black
+  White
+End Enum CleanStrip
+
+
+Begin Enum OrientationCorrection
+  UpsideDownFromMICR
+  AutoCorrect
+  None
+End Enum OrientationCorrection
+
+
+Begin Enum OutputFormat
+  Tiff
+  Bmp
+  Jpeg
+  Png
+  Byte   // Raw pixels buffer, interlaced Z-aligned components.
+End Enum OutputFormat
+
+
+Begin Struct OutputImageFormat
+Single OutputFormat outputFormat 
+Single Unsigned qualityLevel 
+End Struct OutputImageFormat
+
+
+Begin Struct ImageConversion
+Single Boolean enableImageConversion 
+Single Boolean stopAfterConversion 
+Single OutputFormat outputFormat 
+Single OutputImageFormat outputImageFormat 
+Single ImageSourceType imageSourceType 
+Begin Union imageSourceTypeInfo (imageSourceType)
+Begin Case File
+Single SaveFile fileName 
+End Case File
+End Union imageSourceTypeInfo
+End Struct ImageConversion
+
+
+Begin Enum Unit
+  Meters
+  Millimetres
+  Pixels
+  Inches
+End Enum Unit
+
+
+Begin Struct ImagePreprocessing
+Single CleanStrip LeftClean 
+Single CleanStrip RightClean 
+Single CleanStrip TopClean 
+Single CleanStrip BottomClean 
+Single ReverseValue reverseValues 
+Single OrientationCorrection orientationCorrection 
+Single Boolean modelRegistration ()  
+Single Boolean crop 
+Single Float binarControl ()  
+Single Boolean skewCorrection 
+Single Boolean rejectSkewedDocument 
+Begin Union cropInfo (crop)
+Begin Case Yes
+Single Unsigned left 
+Single Unsigned top 
+Single Unsigned right 
+Single Unsigned bottom 
+End Case Yes
+End Union cropInfo
+End Struct ImagePreprocessing
+
+
+Begin Struct DocumentModel
+Single String parameterFile 
+Single Image modelImage 
+Single String modelFolder ()  
+TabOf Image sampleImages ()  
+Single ImagePreprocessing imagePreprocessing 
+Single Boolean useGuideMarks 
+End Struct DocumentModel
+
+
+Begin Enum PostalVendor
+  MediaPost
+  FirstLogicUS
+  USPS
+  DeutschePost
+  SynaxioFR
+  AVINC
+  Custom
+End Enum PostalVendor
+
+
+Begin Enum SQLServer
+  MSSQL
+  MySQL
+  A2iA
+End Enum SQLServer
+
+
+Begin Struct PostalDictionary
+Single Country country 
+Single File dllPath ()  
+Single Dir dataPath 
+Single PostalVendor vendor 
+Begin Union vendorInfo (vendor)
+Begin Case MediaPost
+Single String cityZipFilename 
+Single String cityZipStreetFilename 
+Single String houseFilename 
+End Case MediaPost
+Begin Case FirstLogicUS
+Single String pathDLL 
+Single String cityZipStateFilename 
+Single String zipStreetFilename 
+End Case FirstLogicUS
+Begin Case USPS
+Single String serverName 
+Single String userName 
+Single String password 
+Single String databaseName 
+Single SQLServer SQLServer 
+End Case USPS
+Begin Case DeutschePost
+Single String serverName 
+Single String userName 
+Single String password 
+Single String databaseName 
+Single SQLServer SQLServer 
+End Case DeutschePost
+End Union vendorInfo
+End Struct PostalDictionary
+
+
+Begin Enum Origin
+  TopLeft   // Coordinates are relative to the top left corner
+  BotLeft   // Coordinates are relative to the bottom left corner
+  TopRight   // Coordinates are relative to the top right corner
+  BotRight   // Coordinates are relative to the bottom right corner
+  Top   // Coordinates are relative to the top edge (horizontal strip : x coord ignored)
+  Bottom   // Coordinates are relative to the bottom edge (horizontal strip : x coord ignored)
+  Left   // Coordinates are relative to the left edge (vertical strip : y coord ignored)
+  Right   // Coordinates are relative to the right edge (vertical strip : y coord ignored)
+  Marker   // Coordinates are relative to the top left corner of a marker box
+End Enum Origin
+
+
+Begin Struct Box
+Single Origin origin 
+Single Float x_tl 
+Single Float x_br 
+Single Float y_tl 
+Single Float y_br 
+Single Unit unit 
+Single String markerId 
+Single Unsigned pageIndex 
+End Struct Box
+
+
+// Object orientation (field to be recognized or others)
+Begin Enum Orientation
+  LeftRight
+  TopDown
+  RightLeft
+  BottomUp
+End Enum Orientation
+
+
+Begin Enum LocationRuleType
+  LeftShift
+  RightShift
+  TopShift
+  BottomShift
+End Enum LocationRuleType
+
+
+Begin Struct LocationRule
+Single LocationRuleType type 
+Single String markerId 
+Begin Union typeInfo (type)
+Begin Case LeftShift
+Single String markerId 
+End Case LeftShift
+Begin Case RightShift
+Single String markerId 
+End Case RightShift
+Begin Case TopShift
+Single String markerId 
+End Case TopShift
+Begin Case BottomShift
+Single String markerId 
+End Case BottomShift
+End Union typeInfo
+End Struct LocationRule
+
+
+Begin Struct Location
+TabOf LocationRule rules 
+End Struct Location
+
+
+// Type of writing
+Begin Enum WriteType
+  Handwritten
+  Printed
+  AutoDetect
+End Enum WriteType
+
+
+Begin Enum HandwritingStyle
+  SeparatedProportional
+  SeparatedFixed
+  HandPrinted
+  Cursive
+  Regular   // Obsolete
+End Enum HandwritingStyle
+
+
+// Define the writing period for antique write type recognition.
+Begin Enum WritingPeriod
+  Contemporary
+  MidNineteenthEarlyTwentieth
+End Enum WritingPeriod
+
+
+// Cleaning results
+Begin Enum BoxingType
+  BestGuess
+  None
+  Full
+  Comb
+  Broken
+  Underlined
+  PreBoxed
+  SeparatedBoxes
+  DottedUnderline
+  ModelCleaning
+End Enum BoxingType
+
+
+Begin Enum ImageQuality
+  Standard
+  NoNoise
+  Noisy
+End Enum ImageQuality
+
+
+// Type of Characters Encoding Format
+Begin Enum CharactersEncoding
+  CP1252
+  UTF8
+End Enum CharactersEncoding
+
+
+Begin Struct CleanedImageResult
+Single Image image 
+Single Box location 
+End Struct CleanedImageResult
+
+
+Begin Struct AmountScore
+Single Unsigned amount 
+Single Unsigned score 
+Single Boolean negative ()  
+End Struct AmountScore
+
+
+Begin Struct AmountProb
+Single Unsigned amount 
+Single Float prob 
+End Struct AmountProb
+
+
+Begin Struct CharactersScore
+TabOf Char reco 
+Single String wreco ()  
+Single Unsigned score 
+End Struct CharactersScore
+
+
+Begin Struct CharactersProb
+TabOf Char reco 
+Single String wreco ()  
+Single Float prob 
+End Struct CharactersProb
+
+
+Begin Struct CharactersResult
+Single CharactersScore result 
+TabOf CharactersProb prob 
+End Struct CharactersResult
+
+
+Begin Struct DicoWord
+Single String word 
+Single Unsigned index 
+End Struct DicoWord
+
+
+Begin Struct StringProb
+Single String reco 
+Single Float confidence 
+End Struct StringProb
+
+
+Begin Struct SingleWord
+Single String reco 
+Single Unsigned itemIndex ()  
+Single Unsigned imageIndex 
+TabOf DicoWord originals 
+End Struct SingleWord
+
+
+Begin Struct WordProb
+TabOf SingleWord words 
+Single Float prob 
+End Struct WordProb
+
+
+Begin Struct WordScore
+Single String reco 
+Single Unsigned score 
+TabOf SingleWord words 
+End Struct WordScore
+
+
+Begin Struct WordResult
+Single WordScore result 
+TabOf WordProb finalList 
+TabOf CleanedImageResult wordImages 
+End Struct WordResult
+
+
+Begin Struct Date
+Single Unsigned day 
+Single Unsigned month 
+Single Unsigned year 
+End Struct Date
+
+
+Begin Struct DateScore
+Single Date reco 
+Single Unsigned score 
+End Struct DateScore
+
+
+Begin Struct DateProb
+Single Date reco 
+Single Float prob 
+End Struct DateProb
+
+
+Begin Struct DateResult
+Single DateScore result 
+TabOf DateProb prob 
+End Struct DateResult
+
+
+Begin Struct Time
+Single Unsigned hour 
+Single Unsigned minute 
+Single Unsigned second 
+End Struct Time
+
+
+Begin Struct TimeScore
+Single Time reco 
+Single Unsigned score 
+End Struct TimeScore
+
+
+Begin Struct TimeProb
+Single Time reco 
+Single Float prob 
+End Struct TimeProb
+
+
+Begin Struct TimeResult
+Single TimeScore result 
+TabOf TimeProb prob 
+End Struct TimeResult
+
+
+Begin Struct BooleanScore
+Single Boolean answer 
+Single Unsigned score 
+End Struct BooleanScore
+
+
+// -- Adresses
+Begin Enum AddressLineType
+  Name
+  Destination
+  PhoneNum
+  CityZip
+  PlainText
+End Enum AddressLineType
+
+
+Begin Struct AddressLineScore
+TabOf Char reco 
+Single String wreco ()  
+Single Unsigned score 
+Single AddressLineType type 
+End Struct AddressLineScore
+
+
+Begin Struct Address
+TabOf AddressLineScore lines 
+Single Unsigned score 
+End Struct Address
+
+
+// ICR branch for a field recognition.
+Begin Enum FieldDecision
+  Handwritten   // The field was considered handwritten
+  Printed   // The field was considered machine printed
+  Empty   // The field was considered empty
+  NotFound   // The field was not found
+End Enum FieldDecision
+
+
+Begin Struct SingleCharacterScore
+Single String reco 
+Single Unsigned score 
+Single Box box 
+End Struct SingleCharacterScore
+
+
+Begin Struct DetailedCharacterResults
+TabOf SingleCharacterScore characters 
+Single Unsigned score ()  
+End Struct DetailedCharacterResults
+
+
+Begin Struct SingleWordScore
+Single String reco 
+Single Unsigned score 
+Single Box box 
+End Struct SingleWordScore
+
+
+Begin Struct DetailedWordResults
+TabOf SingleWordScore words 
+End Struct DetailedWordResults
+
+
+// OCR Kind ? Special OCRs only usable on Characters Field (special character sets)
+Begin Enum PrintedOCRType
+  Generic
+  Fixed
+  Proportional
+  CMC7
+  MICR
+  A
+  B
+  A_Ext
+  B_Ext
+  7B
+  Stamp
+End Enum PrintedOCRType
+
+
+// OCR engine type used for printed transcriptions
+Begin Enum OCREngineType
+  Standard
+  OCR1
+End Enum OCREngineType
+
+
+Begin Enum DefineFontSize
+  Default
+  Fixed
+  Auto
+End Enum DefineFontSize
+
+
+// -- Characters
+Begin Enum CharacterFieldType
+  Digits
+  Alpha
+  AlphaNum
+End Enum CharacterFieldType
+
+
+// -- Words
+Begin Enum VocabFormat
+  None
+  Simple   // No special compilation of the vocabulary
+  File
+  SingleString
+  Persistent
+End Enum VocabFormat
+
+
+Begin Struct VocabItem
+Single String item 
+End Struct VocabItem
+
+
+Begin Enum Alphabet
+  AutoDetect
+  Latin
+  Arabic
+End Enum Alphabet
+
+
+Begin Enum VocabularyFormat
+  Simple
+  File
+  SingleString
+End Enum VocabularyFormat
+
+
+Begin Struct Vocabulary
+Single VocabularyFormat format 
+Begin Union formatInfo (format)
+Begin Case Simple
+TabOf VocabItem names 
+End Case Simple
+Begin Case File
+Single CharactersEncoding encoding ()  
+Single File fileName 
+End Case File
+Begin Case SingleString
+Single String words 
+End Case SingleString
+End Union formatInfo
+End Struct Vocabulary
+
+
+Begin Enum WordProcess
+  OneWordPerField   // Only one word in the field. The whole result is compared to vocabulary entries.
+  NWordsPerField   // Multiple words per field. Each found word is compared to vocabulary entries.
+End Enum WordProcess
+
+
+Begin Struct WordInput
+Single VocabFormat vocabFormat 
+Begin Union vocabFormatInfo (vocabFormat)
+Begin Case Simple
+TabOf VocabItem names 
+End Case Simple
+Begin Case File
+Single CharactersEncoding encoding ()  
+Single File fileName 
+End Case File
+Begin Case SingleString
+Single String words 
+End Case SingleString
+Begin Case Persistent
+Single PersistentId vocabularyId 
+End Case Persistent
+End Union vocabFormatInfo
+Single WordProcess wordProcess 
+Begin Union wordProcessInfo (wordProcess)
+Begin Case NWordsPerField
+Single Unsigned maxNumberOfWords 
+Single Unsigned minNumberOfWords 
+End Case NWordsPerField
+End Union wordProcessInfo
+Single Boolean keepAllAnswers 
+Single Boolean verification 
+Single Boolean aliases 
+Single CharacterFieldType charactersType 
+Single Alphabet alphabet ()  
+Single String coeffsFileName ()  
+End Struct WordInput
+
+
+Begin Struct PossibleAnswers
+Single VocabFormat vocabFormat 
+Begin Union vocabFormatInfo (vocabFormat)
+Begin Case Simple
+TabOf VocabItem names 
+End Case Simple
+Begin Case File
+Single CharactersEncoding encoding ()  
+Single File fileName 
+End Case File
+Begin Case SingleString
+Single String words 
+End Case SingleString
+Begin Case Persistent
+Single PersistentId vocabularyId 
+End Case Persistent
+End Union vocabFormatInfo
+Single Boolean keepAllAnswers 
+End Struct PossibleAnswers
+
+
+// -- Dates
+Begin Enum DateFormat
+  DayMonthYear   // In full digits dates, the day is provided first.
+  MonthDayYear   // In full digits dates, the month is provided first.
+  YearMonthDay
+  MonthYear
+  YearMonth
+  DayMonth
+  MonthDay
+End Enum DateFormat
+
+
+Begin Enum MonthFormat
+  Numerical
+  Word
+End Enum MonthFormat
+
+
+Begin Enum YearFormat
+  FourDigits
+  TwoDigits
+End Enum YearFormat
+
+
+Begin Enum PrintedLARType
+  Words
+  Digits
+End Enum PrintedLARType
+
+
+// Address field
+Begin Enum AddressSemFieldType
+  Civility
+  Company
+  LastName
+  MiddleName
+  FirstName
+  Name   // FirstName and Name in any order
+  FirstMiddleLastName
+  LastFirstMiddleName
+  AppartNumber
+  Building
+  HouseNumber
+  StreetType
+  StreetName
+  Street   // Street type and StreetName
+  Destination   // Building, House Number, Street type and StreetName City Zip
+  City
+  CityZip   // CityZip
+  State
+  CityZipState   // CityZip and State in any order
+  ShortZip
+  LongZip
+  FullZip
+  POBox
+  Address   // Complete address except name
+  NameAndAddress
+  Country
+  CityState
+  Department
+End Enum AddressSemFieldType
+
+
+Begin Enum BarcodeType
+  AutoDetect
+  Code39
+  Interleaved
+  Codabar
+  Code128
+  Postnet
+  PDF417
+  Datamatrix
+  QRCode
+End Enum BarcodeType
+
+
+Begin Enum ControlType
+  None
+  Luhn
+  Mod97
+End Enum ControlType
+
+
+Begin Struct AddressGeoSemFieldInput
+Single AddressSemFieldType semFieldType 
+End Struct AddressGeoSemFieldInput
+
+
+Begin Struct GeometricFieldInput
+Single Box box 
+Single Location location 
+Single WriteType writeType 
+Single HandwritingStyle handwritingStyle 
+Single PrintedOCRType printedOCRType 
+Single Orientation orientation ()  
+Single Unsigned maxChar 
+Single Unsigned minChar 
+Single BoxingType boxingType 
+Single Boolean cleaningDeactivated 
+Single Unsigned maxLines 
+Single Unsigned minLines 
+TabOf Box lineBoxes ()  
+End Struct GeometricFieldInput
+
+
+Begin Struct AddressGeoFieldInput
+Single GeometricFieldInput geometric 
+TabOf AddressGeoSemFieldInput semantics 
+End Struct AddressGeoFieldInput
+
+
+Begin Struct AddressFieldContext
+Single AddressSemFieldType semField 
+Single WordInput context 
+End Struct AddressFieldContext
+
+
+Begin Struct AddressFieldResultRequest
+Single AddressSemFieldType semField 
+Single UserId Id 
+End Struct AddressFieldResultRequest
+
+
+Begin Struct AddressBookEntry
+TabOf AddressBookCell columns 
+End Struct AddressBookEntry
+
+
+Begin Struct AddressBookFormat
+TabOf AddressSemFieldType columns 
+End Struct AddressBookFormat
+
+
+Begin Enum DataFormat
+  Simple
+  File
+End Enum DataFormat
+
+
+Begin Struct AddressBook
+Single DataFormat dataFormat 
+Single AddressBookFormat format 
+Begin Union dataFormatInfo (dataFormat)
+Begin Case Simple
+TabOf AddressBookEntry entries 
+End Case Simple
+Begin Case File
+Single CharactersEncoding encoding ()  
+Single File fileName 
+End Case File
+End Union dataFormatInfo
+Single Country country 
+End Struct AddressBook
+
+
+Begin Struct CustomAddressInput
+TabOf AddressGeoFieldInput geoFields 
+Single PersistentId postalDictionary 
+Single DataPersistence addressBookPersistence 
+Begin Union addressBookInfo (addressBookPersistence)
+Begin Case Request
+Single AddressBook addressBook 
+End Case Request
+Begin Case Persistent
+Single PersistentId addressBookId 
+End Case Persistent
+End Union addressBookInfo
+TabOf AddressFieldContext fieldContexts 
+TabOf AddressFieldResultRequest fieldResultRequests 
+End Struct CustomAddressInput
+
+
+Begin Struct AddressBookCell
+Single String cell 
+End Struct AddressBookCell
+
+
+Begin Struct AddressGeoFieldOutput
+TabOf DetailedCharacterResults detailedCharacterResults ()  
+Single CleanedImageResult image 
+End Struct AddressGeoFieldOutput
+
+
+Begin Struct CustomAddressItemOutput
+Single AddressSemFieldType type 
+Single UserId Id 
+Single String reco 
+Single Float prob 
+End Struct CustomAddressItemOutput
+
+
+Begin Struct CustomAddressScore
+Single Unsigned score 
+TabOf CustomAddressItemOutput items 
+End Struct CustomAddressScore
+
+
+Begin Struct CustomAddressResult
+Single Float prob 
+TabOf CustomAddressItemOutput items 
+End Struct CustomAddressResult
+
+
+Begin Struct CustomAddressOutput
+TabOf AddressGeoFieldOutput geoResults 
+Single CustomAddressScore result 
+TabOf CustomAddressResult finalList ()  
+End Struct CustomAddressOutput
+
+
+// Customized field
+Begin Enum FieldType
+  Amount   // An amount
+  Characters   // A string of characters
+  CheckBox   // A box, or a system of box matrix with or without a cross in it
+  HWDetecting   // A field where some writing should be detected (Signature also)
+  Word   // Isolated hand writing recognition words
+  Date   // A string which contains a date
+  Address   // An address block
+  LitteralAmount   // Legal amount
+  CustomAddress
+  ZIP
+  PhoneNumber
+  RIB
+  CreditCardNumber
+  SocialSecurityNumber
+  Time   // A string which contains a time in format "hh:mm:ss", "hh,mm,ss" or "hh-mm-ss"
+  Barcode
+End Enum FieldType
+
+
+Begin Struct FieldInfo
+Single Country country 
+Single WriteType writeType 
+Single HandwritingStyle handwritingStyle 
+Single WritingPeriod writingPeriod 
+Single PrintedOCRType printedOCRType 
+Single DefineFontSize defineFontSize 
+Single Unsigned fontSize 
+Single Orientation orientation ()  
+Single Unsigned maxChar 
+Single Unsigned minChar 
+Single Boolean cleaningDeactivated 
+Single BoxingType boxingType 
+Single ImageQuality fieldImageQuality ()  
+Single Boolean printedTextPresent 
+Single Boolean sideObjectsPresent 
+Single Boolean holesInCharacters 
+Single String preconfiguredParameters ()  
+Single InvertedText invertedText 
+Single String regexpFilter 
+Single Boolean disableRegexp 
+Single ControlType controlType 
+Single Boolean acceptEmptyResults ()  
+End Struct FieldInfo
+
+
+Begin Struct StringScoreLocation
+Single String reco 
+Single Unsigned score 
+Single Boolean accepted 
+Single CleanedImageResult extractedImage 
+End Struct StringScoreLocation
+
+
+Begin Struct GenderScoreLocation
+Single Gender reco 
+Single Unsigned score 
+Single CleanedImageResult extractedImage 
+End Struct GenderScoreLocation
+
+
+Begin Struct CountryScoreLocation
+Single Country reco 
+Single Unsigned score 
+Single Boolean accepted 
+Single CleanedImageResult extractedImage 
+End Struct CountryScoreLocation
+
+
+Begin Struct AmountScoreLocation
+Single Unsigned reco 
+Single Unsigned score 
+Single Boolean accepted 
+Single CleanedImageResult extractedImage 
+End Struct AmountScoreLocation
+
+
+Begin Struct DateScoreLocation
+Single Date reco 
+Single Unsigned score 
+Single Boolean accepted 
+Single CleanedImageResult extractedImage 
+End Struct DateScoreLocation
+
+
+Begin Struct TimeScoreLocation
+Single Time reco 
+Single Unsigned score 
+Single Boolean accepted 
+Single CleanedImageResult extractedImage 
+End Struct TimeScoreLocation
+
+
+Begin Struct FeatureInput
+Single Boolean enable 
+Single Unsigned threshold 
+End Struct FeatureInput
+
+
+Begin Struct RIBResult
+Single StringScoreLocation result 
+Single StringScoreLocation codeBanque 
+Single StringScoreLocation codeGuichet 
+Single StringScoreLocation numeroDeCompte 
+Single StringScoreLocation cle 
+End Struct RIBResult
+
+
+Begin Enum CheckBoxType
+  Rectangular
+  Round
+  FromModel
+  AutoDetect
+  Oval
+  Parenthesis
+End Enum CheckBoxType
+
+
+Begin Enum CheckBoxSize
+  Small
+  Middle
+  Large
+  Any
+End Enum CheckBoxSize
+
+
+Begin Enum CheckBoxSpacing
+  Fixed
+  Variable
+End Enum CheckBoxSpacing
+
+
+Begin Enum CentPresence
+  Always
+  Never
+  Unknown
+End Enum CentPresence
+
+
+Begin Enum MultipleTicks
+  Yes
+  No
+  SingleMandatory
+End Enum MultipleTicks
+
+
+Begin Struct FieldInput
+Single UserId Id 
+Single Box box 
+Single Location location 
+Single Boolean looseLocation ()  
+Single FieldType fieldType 
+Single FieldInfo fieldInfo 
+Single Optimisation optimisation 
+Single Unsigned threshold 
+Single File internalParameterFile ()  
+Begin Union fieldTypeInfo (fieldType)
+Begin Case Amount
+Single Currency currency 
+Single Boolean currencySignLocator 
+Single LocationRuleType amountShiftRelativeToCurrencySign 
+Single CentPresence centPresence 
+Single Box centPos 
+End Case Amount
+Begin Case Characters
+Single CharacterFieldType charactersType 
+Single Boolean spaceDetection 
+End Case Characters
+Begin Case CheckBox
+Single Boolean isPrintedBox 
+Single CheckBoxType type 
+Single Unsigned count 
+Single Unsigned count_cols 
+Single Unsigned count_lines 
+Single MultipleTicks multipleTicks 
+Single CheckBoxSize size 
+Single CheckBoxSpacing spacing 
+End Case CheckBox
+Begin Case HWDetecting
+Single Boolean signatureDetection 
+End Case HWDetecting
+Begin Case Word
+Single WordInput wordInput 
+End Case Word
+Begin Case Date
+Single Boolean definePivotYear 
+Single Unsigned pivotYear 
+Single Boolean acceptPostDated 
+Single Date referenceDate 
+Single DateFormat format 
+Single MonthFormat monthFormat 
+Single YearFormat yearFormat 
+Single Date minimum 
+Single Date maximum 
+Single String dateFormat 
+End Case Date
+Begin Case LitteralAmount
+Single PrintedLARType printedLARType 
+End Case LitteralAmount
+Begin Case CustomAddress
+Single CustomAddressInput address 
+End Case CustomAddress
+Begin Case RIB
+Single Unsigned detailedThreshold 
+End Case RIB
+Begin Case SocialSecurityNumber
+Single PossibleAnswers possibleAnswers 
+End Case SocialSecurityNumber
+Begin Case Barcode
+Single BarcodeType barcodeType 
+End Case Barcode
+End Union fieldTypeInfo
+End Struct FieldInput
+
+
+Begin Struct CheckBoxLineResult
+TabOf BooleanScore cellResults 
+End Struct CheckBoxLineResult
+
+
+Begin Struct FieldOutput
+Single FieldInput input ()  
+Single Boolean accepted 
+Begin Union fieldTypeInfo (input.fieldType)
+Begin Case Amount
+Single AmountScore result 
+TabOf AmountProb finalList 
+TabOf AmountProb roundList 
+TabOf AmountProb fractionalList 
+End Case Amount
+Begin Case Characters
+Single CharactersScore result 
+TabOf CharactersProb finalList 
+End Case Characters
+Begin Case CheckBox
+Single BooleanScore result 
+Single Unsigned tickCount 
+Single Unsigned index 
+TabOf CheckBoxLineResult lineResults 
+End Case CheckBox
+Begin Case HWDetecting
+Single BooleanScore result 
+End Case HWDetecting
+Begin Case Word
+Single WordResult word 
+End Case Word
+Begin Case Date
+Single DateResult date 
+End Case Date
+Begin Case Address
+Single Address result 
+End Case Address
+Begin Case LitteralAmount
+Single AmountScore result 
+TabOf AmountProb finalList 
+TabOf AmountProb roundList 
+TabOf AmountProb fractionalList 
+TabOf DetailedWordResults detailedWordResults 
+End Case LitteralAmount
+Begin Case CustomAddress
+Single CustomAddressOutput address 
+End Case CustomAddress
+Begin Case ZIP
+Single CharactersScore result 
+TabOf CharactersProb finalList 
+End Case ZIP
+Begin Case PhoneNumber
+Single CharactersScore result 
+TabOf CharactersProb finalList 
+End Case PhoneNumber
+Begin Case RIB
+Single RIBResult result 
+End Case RIB
+Begin Case CreditCardNumber
+Single CharactersScore result 
+TabOf CharactersProb finalList 
+End Case CreditCardNumber
+Begin Case SocialSecurityNumber
+Single CharactersScore result 
+TabOf CharactersProb finalList 
+End Case SocialSecurityNumber
+Begin Case Time
+Single TimeResult time 
+End Case Time
+Begin Case Barcode
+Single CharactersScore result 
+TabOf CharactersProb finalList 
+End Case Barcode
+End Union fieldTypeInfo
+Single CleanedImageResult extractedField 
+Single Boolean modelCleaned ()  
+Single FieldDecision decision 
+TabOf DetailedCharacterResults detailedCharacterResults 
+TabOf Byte internalResults ()  
+End Struct FieldOutput
+
+
+// Operator field
+Begin Enum OperatorType
+  Concatenation   // The result is a concatenation of several fields
+  Merge   // The result is a merge of several sources of information
+End Enum OperatorType
+
+
+Begin Struct Operand
+Single String name 
+End Struct Operand
+
+
+Begin Struct OperatorInput
+Single UserId id 
+Single OperatorType operatorType 
+Single Unsigned threshold 
+TabOf Operand operands ()  
+End Struct OperatorInput
+
+
+Begin Struct OperatorOutput
+Single OperatorInput input ()  
+Single Boolean accepted 
+Single FieldType fieldType 
+Begin Union fieldTypeInfo (fieldType)
+Begin Case Amount
+Single AmountScore result 
+TabOf AmountProb finalList 
+End Case Amount
+Begin Case Characters
+Single CharactersScore result 
+TabOf CharactersProb finalList 
+End Case Characters
+End Union fieldTypeInfo
+End Struct OperatorOutput
+
+
+Begin Struct GuideMark
+Single Box box 
+End Struct GuideMark
+
+
+// Zone to be cleaned
+Begin Enum CleanZoneType
+  PrePrinted
+  Line
+End Enum CleanZoneType
+
+
+Begin Struct CleanZone
+Single CleanZoneType type ()  
+Single Orientation orientation ()  
+Single Box box 
+End Struct CleanZone
+
+
+Begin Struct CustomInput
+TabOf GuideMark guideMarks ()  
+TabOf CleanZone cleanZones ()  
+TabOf FieldInput fields 
+TabOf OperatorInput operators ()  
+End Struct CustomInput
+
+
+Begin Struct CustomOutput
+TabOf FieldOutput fields 
+TabOf OperatorOutput operators ()  
+End Struct CustomOutput
+
+
+Begin Struct DongleQueryOutput
+Single Unsigned DocsHour 
+Single Unsigned DocsRemaining 
+Single Unsigned DocsUsed 
+Single Unsigned DaysRemaining 
+Single Unsigned DaysUsed 
+Single Unsigned CharsHour 
+Single Unsigned CharsRemaining 
+Single Unsigned CharsUsed 
+TabOf Country availableCountries 
+End Struct DongleQueryOutput
+
+
+Begin Struct DevInput
+Single File gaFile ()  
+Single File pythonFile ()  
+TabOf CustomInput input 
+TabOf CustomOutput intermediateResults 
+End Struct DevInput
+
+
+Begin Struct DevOutput
+TabOf CustomOutput results 
+End Struct DevOutput
+
+
+// Document
+Begin Enum DocumentType
+  Custom   // A customized document : a set of fields with coordinates and attributes
+  SingleField   // One single field to recognize
+  NoProcess   // The ICR system should not handle this document
+  DongleQuery   // Query about the dongle status
+  AutoDefine
+  Specific
+End Enum DocumentType
+
+
+Begin Struct VerboseDetails
+Single Boolean preprocessedImage 
+Single OutputImageFormat preprocessedImageFormat 
+Single Boolean extractedImages 
+Single Boolean characterResults 
+Single Boolean wordResults 
+Single Boolean originalWords 
+End Struct VerboseDetails
+
+
+Begin Enum MarkerType
+  Keyword
+  Logo
+End Enum MarkerType
+
+
+Begin Struct Marker
+Single UserId id 
+Single MarkerType markerType 
+Begin Union markerTypeInfo (markerType)
+Begin Case Keyword
+Single String keyword 
+End Case Keyword
+Begin Case Logo
+Single Image LogoImage 
+End Case Logo
+End Union markerTypeInfo
+Single Box seekingZone 
+Single Boolean inverted 
+End Struct Marker
+
+
+Begin Enum PageProcess
+  ClassifyAndProcess
+  ClassifyOnly
+  ProcessOnly
+End Enum PageProcess
+
+
+Begin Enum AutoDefineProcess
+  ClassifyAndProcess
+  ClassifyOnly
+  ProcessOnly
+End Enum AutoDefineProcess
+
+
+Begin Enum SpecificDocumentSubType
+  Passport
+End Enum SpecificDocumentSubType
+
+
+Begin Struct SpecificInput
+Single Country country 
+Single Optimisation optimisation 
+Single SpecificDocumentSubType subType 
+Begin Union subTypeInfo (subType)
+Begin Case Passport
+Single PersistentId persistentPassportId 
+Single Boolean GlobalEnabling 
+Single FeatureInput Name 
+Single FeatureInput FirstName ()  
+Single FeatureInput LastName ()  
+Single FeatureInput Gender 
+Single FeatureInput BirthDate 
+Single FeatureInput PlaceOfBirth 
+Single FeatureInput IssueDate 
+Single FeatureInput ValidUntil 
+End Case Passport
+End Union subTypeInfo
+End Struct SpecificInput
+
+
+Begin Enum RequestDictionaryType
+  String
+End Enum RequestDictionaryType
+
+
+Begin Struct RequestDictionary
+Single RequestDictionaryType dictionaryType ()  
+Begin Union dictionaryTypeInfo (dictionaryType)
+Begin Case String
+TabOf String key 
+End Case String
+End Union dictionaryTypeInfo
+End Struct RequestDictionary
+
+
+Begin Struct RequestParameters
+Single RequestDictionary keys ()  
+End Struct RequestParameters
+
+
+Begin Struct Input
+Single String documentName ()  
+Single String labelString ()  
+Single String paramString ()  
+Single Boolean verbose ()  
+Single VerboseDetails verboseDetails 
+Single Boolean preprocessOnly ()  
+Single ImagePreprocessing imagePreprocessing 
+Single ImageConversion originalImageConversion 
+TabOf ImagePreprocessing detailedPagesPreprocessing 
+Single Image image 
+TabOf Image additionalPages 
+Single InternalProcessing internalProcessing ()  
+TabOf Marker markers 
+Single DocumentType documentType 
+Single File internalParameterFile ()  
+Single DataPersistence modelPersistence 
+Begin Union modelPersistenceInfo (modelPersistence)
+Begin Case Request
+Single DocumentModel model 
+End Case Request
+Begin Case Persistent
+Single PersistentId modelId 
+End Case Persistent
+End Union modelPersistenceInfo
+Begin Union documentTypeInfo (documentType)
+Begin Case Custom
+Single CustomInput custom 
+End Case Custom
+Begin Case SingleField
+Single FieldInput field 
+End Case SingleField
+Begin Case AutoDefine
+Single PersistentId documentClassifier 
+Single Unsigned classificationThreshold 
+Single AutoDefineProcess processRequest 
+Single String modelToProcess 
+End Case AutoDefine
+Begin Case Specific
+Single SpecificInput specificInput 
+End Case Specific
+End Union documentTypeInfo
+Single Dir configFolder ()  
+Single Unsigned availableTime ()  
+Single RequestParameters parameters ()  
+Single CharactersEncoding encoding ()  
+Single CharactersEncoding outputEncoding 
+End Struct Input
+
+
+Begin Struct ClassificationResult
+Single String className 
+Single Float prob 
+End Struct ClassificationResult
+
+
+Begin Struct ClassificationScore
+Single String className 
+Single Unsigned score 
+End Struct ClassificationScore
+
+
+Begin Struct MarkerLocation
+Single UserId id 
+Single Boolean found 
+Single Box box 
+End Struct MarkerLocation
+
+
+Begin Struct DateResultLocation
+Single DateResult reco 
+Single CleanedImageResult extractedImage 
+End Struct DateResultLocation
+
+
+Begin Struct BankAccount
+Single RIBResult rib 
+Single StringScoreLocation iban 
+Single StringScoreLocation name 
+End Struct BankAccount
+
+
+Begin Struct AmountResult
+Single AmountScore result 
+TabOf AmountProb finalList 
+TabOf AmountProb roundList 
+TabOf AmountProb fractionalList 
+End Struct AmountResult
+
+
+Begin Struct AmountResultLocation
+Single AmountResult reco 
+Single CleanedImageResult extractedImage 
+End Struct AmountResultLocation
+
+
+Begin Struct SpecificOutput
+Single SpecificDocumentSubType subType 
+Begin Union subTypeInfo (subType)
+Begin Case Passport
+Single StringScoreLocation Name 
+Single StringScoreLocation FirstName ()  
+Single StringScoreLocation LastName ()  
+Single GenderScoreLocation Gender 
+Single DateScoreLocation BirthDate 
+Single StringScoreLocation PlaceOfBirth 
+Single DateScoreLocation IssueDate 
+Single DateScoreLocation ValidUntil 
+End Case Passport
+End Union subTypeInfo
+End Struct SpecificOutput
+
+
+Begin Struct ClassificationResults
+Single Unsigned identificationScore 
+Single String identificationModelName 
+End Struct ClassificationResults
+
+
+Begin Struct Output
+Single Input input ()  
+Single Image convertedOriginalImage 
+Single Err status 
+Single String statusContext 
+Single String detailedStatusContext ()  
+Single String warningContext 
+Single Unsigned millisec_delay 
+Single Unsigned process_time 
+Single Image preprocessedImage ()  
+TabOf Image additionalPreprocessedPages ()  
+Single Float orientationCorrection 
+Single String hostName 
+Single Unsigned clickCount 
+TabOf MarkerLocation markersLocation 
+Begin Union documentTypeInfo (input.documentType)
+Begin Case Custom
+Single CustomOutput custom 
+End Case Custom
+Begin Case SingleField
+Single FieldOutput field 
+End Case SingleField
+Begin Case DongleQuery
+Single DongleQueryOutput result 
+End Case DongleQuery
+Begin Case Specific
+Single SpecificOutput specificOutput 
+End Case Specific
+End Union documentTypeInfo
+Single ClassificationResults classificationResults 
+End Struct Output
+
+
+Begin Enum KeyType
+  None
+  String
+End Enum KeyType
+
+
+Begin Struct KeyDefinition
+Single Unsigned index 
+Single Input doc 
+Single File imageName 
+Single UserId label 
+End Struct KeyDefinition
+
+
+// The persistent vocabulary definitions are not finalized yet. They may change.
+Begin Enum PersistentVocabularyType
+  Simple
+  File
+  SingleString
+End Enum PersistentVocabularyType
+
+
+Begin Struct PersistentVocabulary
+Single PersistentVocabularyType type 
+Single String coeffsFileName ()  
+Single WriteType writeType 
+Single HandwritingStyle handwritingStyle 
+Single Country country 
+Single Boolean aliases 
+Begin Union typeInfo (type)
+Begin Case Simple
+TabOf VocabItem names 
+End Case Simple
+Begin Case File
+Single CharactersEncoding encoding ()  
+Single File fileName 
+End Case File
+Begin Case SingleString
+Single String names 
+End Case SingleString
+End Union typeInfo
+Single Boolean extendedAliases ()  
+End Struct PersistentVocabulary
+
+
+Begin Struct ModelDefinition
+Single KeyDefinition model 
+Single File imageModelName ()  
+End Struct ModelDefinition
+
+
+Begin Struct DocumentClassifierParameters
+Single ImagePreprocessing preprocessing ()  
+Single KeyDefinition preprocessingAndExtraction 
+End Struct DocumentClassifierParameters
+
+
+Begin Enum DocumentClassifierType
+  StructuredDocs
+  AllDocs
+End Enum DocumentClassifierType
+
+
+Begin Struct DocumentClassifier
+Single DocumentClassifierType documentClassifierType ()  
+Single DocumentClassifierParameters parameters 
+TabOf ModelDefinition models 
+Single ModelDefinition reject 
+Single Unsigned classificationThreshold 
+Single Boolean importedRAD ()  
+Single File IRDBRun ()  
+Single File IRDBBuild ()  
+Single File IRDBTemp ()  
+End Struct DocumentClassifier
+
+
+Begin Struct SpecificPassport
+Single AddressBook book 
+End Struct SpecificPassport
+
+
+Begin Enum PersistentDataType
+  Vocabulary
+  PostalDictionary
+  Identification
+  DocumentModel
+  AddressBook
+  DocumentClassifier
+  SpecificPassport
+  Python
+End Enum PersistentDataType
+
+
+Begin Struct ModelImageDefinition
+Single File filename 
+Single Unsigned index 
+End Struct ModelImageDefinition
+
+
+Begin Struct SimpleModelDefinition
+Single String name 
+Single Unsigned index 
+TabOf ModelImageDefinition filenames 
+End Struct SimpleModelDefinition
+
+
+Begin Struct PersistentResult
+Single PersistentDataType type ()  
+Single String Id 
+Begin Union typeInfo (type)
+Begin Case DocumentModel
+Single Image cleanedImage 
+End Case DocumentModel
+Begin Case DocumentClassifier
+TabOf SimpleModelDefinition trainedModels 
+End Case DocumentClassifier
+End Union typeInfo
+End Struct PersistentResult
+
+
+Begin Struct DongleServer
+Single String name 
+End Struct DongleServer
+
+
+Begin Enum PriorityType
+  High
+  Idle
+  Normal
+  RealTime
+End Enum PriorityType
+
+
+Begin Struct CPU
+Single PriorityType priority 
+Single String dongleServer 
+Single String donglePort 
+Single String cpuServer 
+Single String paramDir 
+Single String portServer 
+TabOf DongleServer dongleServers 
+Single Unsigned maximumThreads 
+End Struct CPU
+
+
+Begin Struct Channel
+Single Unsigned sleepWaitResult_Msec 
+TabOf CPU Cpu 
+End Struct Channel
+
+
+Begin Struct PersistentData
+Single PersistentId Id 
+Single PersistentDataType type 
+Single Boolean privatePersistent ()  
+Begin Union typeInfo (type)
+Begin Case Vocabulary
+Single PersistentVocabulary vocabulary 
+End Case Vocabulary
+Begin Case PostalDictionary
+Single PostalDictionary dictionary 
+End Case PostalDictionary
+Begin Case DocumentModel
+Single DocumentModel model 
+End Case DocumentModel
+Begin Case AddressBook
+Single AddressBook book 
+End Case AddressBook
+Begin Case DocumentClassifier
+Single DocumentClassifier classifier 
+End Case DocumentClassifier
+Begin Case SpecificPassport
+Single SpecificPassport specificPassport 
+End Case SpecificPassport
+Begin Case Python
+Single File scriptFilename 
+End Case Python
+End Union typeInfo
+Single Dir configFolder ()  
+TabOf PersistentResult results ()  
+Single Boolean readyForRecognition ()  
+Single Boolean edited ()  
+Single RequestParameters parameters ()  
+End Struct PersistentData
+
+
+Begin Enum ActionType
+  AddToVocabulary
+  RemoveFromVocabulary
+End Enum ActionType
+
+
+Begin Struct PersistentDataAction
+Single PersistentId Id 
+Single ActionType type 
+Begin Union typeInfo (type)
+Begin Case AddToVocabulary
+Single String fileWords 
+TabOf VocabItem words 
+End Case AddToVocabulary
+Begin Case RemoveFromVocabulary
+Single String fileWords 
+TabOf VocabItem words 
+End Case RemoveFromVocabulary
+End Union typeInfo
+End Struct PersistentDataAction
+
+
+Begin Struct GlobalValues
+Single Country country 
+Single Currency currency 
+Single Boolean useVocabularyHWR 
+Single Optimisation optimisation 
+Single Unsigned dataExtractionThreshold 
+Single CharactersEncoding inputEncoding 
+Single CharactersEncoding outputEncoding 
+End Struct GlobalValues
+
+
+Begin Struct MaskTable
+Single GlobalValues globalValues 
+Single KeyDefinition defaultDefinition 
+TabOf KeyDefinition tIndexedDefinition 
+TabOf PersistentData persistentData 
+Single String productName 
+Single String productVersion 
+Single String productRelease 
+Single CharactersEncoding tblEncoding ()  
+Single KeyType keyType 
+Begin Union tKey (keyType)
+Begin Case String
+TabOf String tString 
+End Case String
+End Union tKey
+End Struct MaskTable
+
+
+Begin Struct MaskKey
+Single KeyType keyType 
+Begin Union keyTypeInfo (keyType)
+Begin Case String
+Single String stringVal 
+End Case String
+End Union keyTypeInfo
+End Struct MaskKey
+
+
+Begin Struct CPUStatus
+Single Err status 
+Single String statusContext 
+Single String warningContext 
+End Struct CPUStatus
+
+
+Begin Struct ChannelStatus
+Single Unsigned faultCpu 
+TabOf CPUStatus Cpu 
+End Struct ChannelStatus
+
+
+Begin Enum RequestType
+  ICR
+  PersistentDataLoad
+  PersistentDataFree
+  PersistentDataFreeAll
+  PersistentDataTrain
+  PDALoad
+  InitDongleServer
+  LogEvent
+  TerminateProcess
+  ICRStatus
+  IsAlive
+  IsPersistentLoaded
+  PagePreClassif
+  PageClassifierTraining
+  PageClassifyAndExtract
+  PageMultiClassifyFromIRDB
+  PageConsolidatedExtraction
+  PagePreClassifFromIRDB
+  CollectionPreClassif
+  CollectionPreClassifFromIRDB
+  CollectionClassifierTraining
+  CollectionClassifyAndExtract
+  CollectionMultiClassifyFromIRDB
+  AutoDefinePreClassif
+  AutoDefineClassifierTraining
+  AutoDefineClassifyAndExtract
+End Enum RequestType
+
+
+Begin Enum TranscriptionSource
+  IRDB
+End Enum TranscriptionSource
+
+
+Begin Enum TrainingAlgo
+  SearchByTemplate
+  ActiveLearning
+  Clustering
+End Enum TrainingAlgo
+
+
+Begin Enum ClassifyAlgo
+  SearchByTemplate
+  ActiveLearning
+  Clustering
+End Enum ClassifyAlgo
+
+
+Begin Struct RequestInput
+Single RequestType type 
+Begin Union typeInfo (type)
+Begin Case ICR
+Single Input input 
+End Case ICR
+Begin Case PersistentDataLoad
+Single PersistentData data 
+End Case PersistentDataLoad
+Begin Case PersistentDataFree
+Single UserId id 
+End Case PersistentDataFree
+Begin Case PersistentDataTrain
+Single PersistentData data 
+End Case PersistentDataTrain
+Begin Case PDALoad
+Single PersistentDataAction data 
+End Case PDALoad
+Begin Case InitDongleServer
+TabOf DongleServer dongleServers 
+End Case InitDongleServer
+Begin Case LogEvent
+Single Boolean flagLogEvent 
+End Case LogEvent
+Begin Case TerminateProcess
+Single Err status 
+End Case TerminateProcess
+Begin Case IsPersistentLoaded
+Single UserId id 
+End Case IsPersistentLoaded
+Begin Case PagePreClassif
+Single Input input 
+End Case PagePreClassif
+Begin Case PageClassifierTraining
+Single PersistentData data 
+Single TrainingAlgo trainingAlgo 
+Begin Union trainingAlgoInfo (trainingAlgo)
+Begin Case Clustering
+Single Unsigned NbClusters 
+End Case Clustering
+End Union trainingAlgoInfo
+End Case PageClassifierTraining
+Begin Case PageClassifyAndExtract
+Single Input input 
+Single Boolean mustExtract 
+Single TranscriptionSource transcriptionSource ()  
+Single ClassifyAlgo classifyAlgo ()  
+End Case PageClassifyAndExtract
+Begin Case PageMultiClassifyFromIRDB
+Single Input input 
+Single ClassifyAlgo classifyAlgo ()  
+End Case PageMultiClassifyFromIRDB
+Begin Case PageConsolidatedExtraction
+Single Input input 
+End Case PageConsolidatedExtraction
+Begin Case PagePreClassifFromIRDB
+Single Input input 
+End Case PagePreClassifFromIRDB
+Begin Case CollectionPreClassif
+Single Input input 
+End Case CollectionPreClassif
+Begin Case CollectionPreClassifFromIRDB
+Single Input input 
+End Case CollectionPreClassifFromIRDB
+Begin Case CollectionClassifierTraining
+Single PersistentData data 
+Single TrainingAlgo trainingAlgo 
+Begin Union trainingAlgoInfo (trainingAlgo)
+Begin Case Clustering
+Single Unsigned NbClusters 
+End Case Clustering
+End Union trainingAlgoInfo
+End Case CollectionClassifierTraining
+Begin Case CollectionClassifyAndExtract
+Single Input input 
+Single Boolean mustExtract 
+Single TranscriptionSource transcriptionSource ()  
+Single ClassifyAlgo classifyAlgo ()  
+End Case CollectionClassifyAndExtract
+Begin Case CollectionMultiClassifyFromIRDB
+Single Input input 
+Single ClassifyAlgo classifyAlgo ()  
+End Case CollectionMultiClassifyFromIRDB
+Begin Case AutoDefinePreClassif
+Single Input input 
+End Case AutoDefinePreClassif
+Begin Case AutoDefineClassifierTraining
+Single Input input 
+End Case AutoDefineClassifierTraining
+Begin Case AutoDefineClassifyAndExtract
+Single Input input 
+End Case AutoDefineClassifyAndExtract
+End Union typeInfo
+End Struct RequestInput
+
+
+Begin Struct PersistentDataTrainResult
+Single Err status 
+Single String statusContext 
+Single String detailedStatusContext ()  
+TabOf PersistentResult results ()  
+Single Boolean readyForRecognition ()  
+Single Unsigned process_time 
+Single String warningContext 
+End Struct PersistentDataTrainResult
+
+
+Begin Struct RequestOutput
+Single RequestType type 
+Begin Union typeInfo (type)
+Begin Case ICR
+Single Output output 
+End Case ICR
+Begin Case PersistentDataLoad
+Single Err status 
+Single String statusContext 
+Single String detailedStatusContext ()  
+Single String warningContext 
+End Case PersistentDataLoad
+Begin Case PersistentDataFree
+Single Err status 
+End Case PersistentDataFree
+Begin Case PersistentDataTrain
+Single PersistentDataTrainResult result ()  
+End Case PersistentDataTrain
+Begin Case PDALoad
+Single Err status 
+End Case PDALoad
+Begin Case InitDongleServer
+Single Err status 
+Single String statusContext 
+End Case InitDongleServer
+Begin Case LogEvent
+Single Boolean flagLogEvent 
+End Case LogEvent
+Begin Case ICRStatus
+Single Float progressStatus 
+Single String progressStatusDesc 
+End Case ICRStatus
+Begin Case IsAlive
+Single Boolean alive 
+End Case IsAlive
+Begin Case IsPersistentLoaded
+Single Boolean isPersistentLoaded 
+End Case IsPersistentLoaded
+Begin Case PagePreClassif
+Single Output output 
+End Case PagePreClassif
+Begin Case PageClassifierTraining
+Single PersistentDataTrainResult output ()  
+End Case PageClassifierTraining
+Begin Case PageClassifyAndExtract
+Single Output output 
+End Case PageClassifyAndExtract
+Begin Case PageMultiClassifyFromIRDB
+Single Output output 
+End Case PageMultiClassifyFromIRDB
+Begin Case PageConsolidatedExtraction
+Single Output output 
+End Case PageConsolidatedExtraction
+Begin Case PagePreClassifFromIRDB
+Single Output output 
+End Case PagePreClassifFromIRDB
+Begin Case CollectionPreClassif
+Single Output output 
+End Case CollectionPreClassif
+Begin Case CollectionPreClassifFromIRDB
+Single Output output 
+End Case CollectionPreClassifFromIRDB
+Begin Case CollectionClassifierTraining
+Single PersistentDataTrainResult output ()  
+End Case CollectionClassifierTraining
+Begin Case CollectionClassifyAndExtract
+Single Output output 
+End Case CollectionClassifyAndExtract
+Begin Case CollectionMultiClassifyFromIRDB
+Single Output output 
+End Case CollectionMultiClassifyFromIRDB
+Begin Case AutoDefinePreClassif
+Single Output output 
+End Case AutoDefinePreClassif
+Begin Case AutoDefineClassifierTraining
+Single Output output 
+End Case AutoDefineClassifierTraining
+Begin Case AutoDefineClassifyAndExtract
+Single Output output 
+End Case AutoDefineClassifyAndExtract
+End Union typeInfo
+Single Err status 
+Single String statusContext 
+Single String detailedStatusContext ()  
+Single String warningContext 
+End Struct RequestOutput
+
+
+Begin Enum MessageType
+  ReadyToBeInitialized   // Sent by the son when ready to exchange message
+  Initialize   // Sent by the father for first child initialization
+  ReadyToReceiveData   // Sent by the son after receiving INITIALIZE message
+  Load   // Sent by the father for sending object
+  Save   // Sent by the son to save TBL modification on the father
+  NotifyReset   // Sent by the son when it needs to reset TBL values
+  Close   // Sent by the son to notify father about closing
+  StopChild   // Sent by the father to close the child process
+End Enum MessageType
+
+
+Begin Struct NodeVisibility
+Single String type 
+Single String member 
+Single Boolean value 
+End Struct NodeVisibility
+
+
+Begin Struct MessageMapInitializeParam
+TabOf NodeVisibility nodeVisibility ()  
+End Struct MessageMapInitializeParam
+
+
+Begin Struct MessageMap
+Single MessageType messageType ()  
+Single Boolean recursive 
+Begin Union messageTypeInfo (messageType)
+Begin Case Initialize
+Single String EngineFolder 
+Single String altA2iARCPg 
+Single String dongleServer 
+Single Boolean disableInput 
+Single String helpFile 
+Single MessageMapInitializeParam messageMapInitializeParam ()  
+End Case Initialize
+Begin Case Load
+Single MaskTable TBL 
+Single String tblPath 
+Single String objectPath 
+End Case Load
+Begin Case Save
+Single MaskTable TBL 
+End Case Save
+End Union messageTypeInfo
+End Struct MessageMap
+
+

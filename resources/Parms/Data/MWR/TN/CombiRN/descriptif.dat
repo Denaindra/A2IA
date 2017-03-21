@@ -1,0 +1,7 @@
+#
+12 NN_linear(20,30)
+13 NN_tanh(30)
+14 NN_linear(30,11)
+15 NN_softmax(11)
+1 NN_containerV{12,13,14,15}
+#

@@ -1,0 +1,27 @@
+<param>	
+	<regex>(\D*)(([1I\)\/_\(-]?[\)\/_\(-]?_?)(((\d){3}[\)\/_\(-]_?){2})(\d){4})(.*)</regex>
+	<regex_manuscript>(\D*)(([1I\)\/_\(-]?[\)\/_\(-]?_?)(((\d){3}[\)\/_\(-]_?){2})(\d){4})(.*)</regex_manuscript> 
+	<score_threshold>0.01</score_threshold>
+	<replace>\2</replace>
+	<compense_comma_bug> 0123456789ADIOSM </compense_comma_bug>
+	<add_input_regex>true</add_input_regex>     
+	<project>
+COUNTRY                  	FR
+DOC_TYPE              	Utils_Doc_Field            
+FIELD_TYPE            	Utils_Field_Telephone
+#WRITE_TYPE            	Utils_Write_Default
+#WRITING_STYLE         	Utils_Style_Separated      
+#FIELD_CHAR_SET         Utils_CharSet_Num
+
+LOCATOR_PRESENCE		Utils_Absent
+EXTRACT_TEXT_OBJECTS    Utils_Absent
+
+ZONE_LEFT        	0
+ZONE_TOP         	0
+ZONE_RIGHT       nc-1
+ZONE_BOTTOM     nl-1
+
+KEEP_CONFIG       1
+	</project>
+      
+</param>

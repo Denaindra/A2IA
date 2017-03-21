@@ -1,0 +1,88 @@
+39	# in
+40	#out
+0	euros	euros	7653
+1	ONE	one	7036
+2	TWO	two	4009
+3	THREE	three	2847
+4	FOUR	four	2486
+5	FIVE	five	4141
+6	SIX	six	2090
+7	SEVEN	seven	2019
+8	EIGHT	eight	1949
+9	NINE	nine	1802
+10	TEN	ten	961
+11	ELEVEN	eleven	418
+12	TWELVE	twelve	551
+13	THIRTEEN	thirteen	467
+14	FOURTEEN	fourteen	413
+15	FIFTEEN	fifteen	993
+16	SIXTEEN	sixteen	390
+17	seventeen	seventeen	388
+18	EIGHTEEN	eighteen	442
+19	NINETEEN	nineteen	378
+20	TWENTY	twenty	4869
+21	THIRTY	thirty	3210
+22	FORTY	forty	2388
+23	FIFTY	fifty	3395
+24	SIXTY	sixty	1725
+25	SEVENTY	seventy	1668
+26	EIGHTY	eighty	1278
+27	NINETY	ninety	1049
+28	HUNDRED	hundred	10573
+29	THOUSAND	thousand	1214
+30	cents	cents	734
+31	NUM	NUM	27535
+32	MINUS	-	2171
+33	NO	no	1702
+34	AND	and	11007
+35	PLUS	+	13315
+36	*	p	3
+37	ONLY	only	251
+38	NOISE	???	15170
+39	XXX	XXX	1310
+45	#nb classes grph (cf NN)
+a
+a2
+c
+c2
+d
+d2
+e
+e2
+f
+f2
+g
+g2
+h
+h2
+i
+i2
+l
+l2
+n
+n2
+o
+o2
+p
+p2
+r
+r2
+s
+s2
+t
+t2
+u
+u2
+v
+v2
+w
+w2
+x
+x2
+y
+y2
+NUM
+-
++
+*
+XXX

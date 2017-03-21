@@ -1,0 +1,9 @@
+#
+22 NN_linear(372,70)
+23 NN_tanh(70)
+24 NN_containerV{22,23}
+35 NN_linear(70,93)
+36 NN_softmax(93)
+37 NN_containerV{35,36}
+1 NN_containerV{24,37}
+#

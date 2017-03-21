@@ -1,0 +1,9 @@
+[Parameter_DictionaryShortCut_ShortCut]
+
+AMERICAN_EXPRESS
+AMEX
+
+INTERNAL_REVENUE_SERVICE
+IRS
+
+

@@ -1,0 +1,11 @@
+###chnfeatdef.dat
+
+number_of_stripe_per_side 6
+
+number_of_grid_per_side 3
+
+grid_feat_type 15
+
+overlap 2
+
+###end

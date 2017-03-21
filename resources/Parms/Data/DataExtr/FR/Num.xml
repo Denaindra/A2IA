@@ -1,0 +1,21 @@
+<param>
+     <regex>(\D*)(((\d)+_?,?_?){2,}?)(.*)</regex>
+     <regex_manuscript>(\D*)(((\d)+_?,?_?){2,}?)(.*) </regex_manuscript>
+      <score_threshold>   0.01 </score_threshold>
+      <replace> \2 </replace>
+      <compense_comma_bug> 0123456789ADIOSM </compense_comma_bug>
+      <add_input_regex>    true </add_input_regex>     
+      <project>
+COUNTRY               FR                 
+DOC_TYPE              Utils_Doc_Field            
+FIELD_TYPE            Utils_Field_Num
+
+ZONE_LEFT          0
+ZONE_TOP            0
+ZONE_RIGHT         nc-1
+ZONE_BOTTOM     nl-1
+
+KEEP_CONFIG       1
+     </project>
+      
+</param>

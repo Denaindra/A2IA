@@ -1,0 +1,9 @@
+#
+12 NN_weightVector(29)
+23 NN_linear(29,100)
+24 NN_sigmoid(100)
+25 NN_linear(100,2)
+26 NN_softmax(2)
+27 NN_containerV{23,24,25,26}
+1 NN_containerV{12,27}
+#

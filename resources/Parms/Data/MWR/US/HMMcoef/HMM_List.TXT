@@ -1,0 +1,87 @@
+39	# in
+40	#out
+0	dollars	dollars	7653
+1	one	one	7036
+2	two	two	4009
+3	three	three	2847
+4	four	four	2486
+5	five	five	4141
+6	six	six	2090
+7	seven	seven	2019
+8	eight	eight	1949
+9	nine	nine	1802
+10	ten	ten	961
+11	eleven	eleven	418
+12	twelve	twelve	551
+13	thirteen	thirteen	467
+14	fourteen	fourteen	413
+15	fifteen	fifteen	993
+16	sixteen	sixteen	390
+17	seventeen	seventeen	388
+18	eighteen	eighteen	442
+19	nineteen	nineteen	378
+20	twenty	twenty	4869
+21	thirty	thirty	3210
+22	forty	forty	2388
+23	fifty	fifty	3395
+24	sixty	sixty	1725
+25	seventy	seventy	1668
+26	eighty	eighty	1278
+27	ninety	ninety	1049
+28	hundred	hundred	10573
+29	thousand	thousand	1214
+30	cents	cents	734
+31	NUM	NUM	27535
+32	minus	-	2171
+33	no	no	1702
+34	and	and	11007
+35	plus	+	13315
+36	*	even	3	# too few to model
+37	only	only	251
+38	noise	???	15170
+39	XXX	XXX	1310
+44	#nb classes grph (cf NN)
+a
+a2
+c
+c2
+d
+d2
+e
+e2
+f
+f2
+g
+g2
+h
+h2
+i
+i2
+l
+l2
+n
+n2
+o
+o2
+r
+r2
+s
+s2
+t
+t2
+u
+u2
+v
+v2
+w
+w2
+x
+x2
+y
+y2
+NUM
+-
+,
++
+*
+XXX

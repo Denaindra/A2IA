@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<Numerics>
+<Rule name="rule_1" mailLevelClass="APPNOCHK" type="DOCUMENT_RULE" value="PRESENT" documentLevelClass="ACCOUNT_APPLICATION">
+</Rule>
+<Rule name="rule_2" mailLevelClass="REDEEM" type="FIELD_RULE" documentLevelClass="DEATH_CERTIFICATE">
+<Vertex name="node_1" nature="KEYWORD" writingType="MP" value="Transfer_In_Kind">
+	<rect x="24" y="723" width="233" height="92"/>
+</Vertex>
+<Vertex name="node_2" nature="CHECK_BOX" value="CHECKED">
+</Vertex>
+<Edge>
+	<Vertex name="node_1" nodeType="StartNode"/>
+	<Vertex name="node_2" nodeType="EndNode"/>
+	<vect x="40" y="10" std_dev_x="20" std_dev_y="20"/>
+</Edge>
+</Rule>
+</Numerics>
+

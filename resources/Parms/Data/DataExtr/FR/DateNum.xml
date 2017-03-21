@@ -1,0 +1,24 @@
+<param>
+     <regex> (\D*)(((((\d{2})|(\d))[_\/\\-]*){2})((\d{4})|(\d{2})))(.*) </regex>
+      <regex_manuscript> (\D*)(((((\d{2})|(\d))[_\/\\-]*){2})((\d{4})|(\d{2})))(.*) </regex_manuscript>
+      <score_threshold> 0.01 </score_threshold>
+      <replace> \2 </replace>
+      <compense_comma_bug> 0123456789ADIOSM </compense_comma_bug>
+      <add_input_regex>    true </add_input_regex>     
+      <project>
+COUNTRY                   FR                 
+DOC_TYPE              Utils_Doc_Field            
+
+FIELD_TYPE           Utils_Field_Date
+DATE_FORMAT      Utils_Date_EU
+MIN_DATE       01011900
+MAX_DATE      01012010
+
+ZONE_LEFT        0
+ZONE_TOP         0
+ZONE_RIGHT       nc-1
+ZONE_BOTTOM     nl-1	
+KEEP_CONFIG       1
+	</project>
+      
+</param>

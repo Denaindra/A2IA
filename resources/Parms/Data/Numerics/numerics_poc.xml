@@ -1,0 +1,168 @@
+<?xml version="1.0" ?>
+<Numerics>
+<Rule name="RPO_Rule_1" mailLevelClass="RPO" type="DOCUMENT_RULE" value="ABSENT" documentLevelClass="CHECK">
+</Rule>
+<Rule name="RPO_Rule_2" mailLevelClass="RPO" type="DOCUMENT_RULE" value="PRESENT" documentLevelClass="ENVELOPE">
+<Vertex name="node_rpo_env_1" nature="KEYWORD" writingType="MP" value="Address_Unknown">
+</Vertex>
+<Vertex name="node_rpo_env_2" nature="KEYWORD" writingType="MP" value="Return_To_Sender">
+</Vertex>
+<Vertex name="node_rpo_env_3" nature="KEYWORD" writingType="MP" value="Undeliverable">
+</Vertex>
+</Rule>
+<Rule name="RPOCK_Rule_1" mailLevelClass="RPOCK" type="DOCUMENT_RULE" value="PRESENT" documentLevelClass="CHECK">
+</Rule>
+<Rule name="RPOCK_Rule_2" mailLevelClass="RPOCK" type="DOCUMENT_RULE" value="PRESENT" documentLevelClass="ENVELOPE">
+<Vertex name="node_rpo_env_1" nature="KEYWORD" writingType="MP" value="Address_Unknown">
+</Vertex>
+<Vertex name="node_rpo_env_2" nature="KEYWORD" writingType="MP" value="Return_To_Sender">
+</Vertex>
+<Vertex name="node_rpo_env_3" nature="KEYWORD" writingType="MP" value="Undeliverable">
+</Vertex>
+</Rule>
+<Rule name="LNASU_Rule_1" mailLevelClass="LNASU" type="DOCUMENT_RULE" value="PRESENT" documentLevelClass="IRA_APPLICATION">
+</Rule>
+<Rule name="LNASU_Rule_2" mailLevelClass="LNASU" type="DOCUMENT_RULE" value="PRESENT" documentLevelClass="ACCOUNT_APPLICATION">
+</Rule>
+<Rule name="LNASU_Rule_3" mailLevelClass="LNASU" type="DOCUMENT_RULE" value="PRESENT" documentLevelClass="SIMPLE_INDIVIDUAL_RETIREMENT_ACCOUNT_APPLICATION">
+</Rule>
+<Rule name="MAINT_Rule_1" mailLevelClass="MAINT" type="DOCUMENT_RULE" value="PRESENT" documentLevelClass="MUTUAL_FUND_CHANGE_OF_INVESTMENT_DEALER_AUTHORIZATION">
+</Rule>
+<Rule name="MAINT_Rule_2" mailLevelClass="MAINT" type="DOCUMENT_RULE" value="PRESENT" documentLevelClass="INVESTMENT_SLIP">
+</Rule>
+<Rule name="MAINT_Rule_3" mailLevelClass="MAINT" type="DOCUMENT_RULE" value="PRESENT" documentLevelClass="W-9">
+</Rule>
+<Rule name="ENASU_Rule_1" mailLevelClass="ENASU" type="DOCUMENT_RULE" value="PRESENT" documentLevelClass="IRA_APPLICATION">
+</Rule>
+<Rule name="ENASU_Rule_2" mailLevelClass="ENASU" type="DOCUMENT_RULE" value="PRESENT" documentLevelClass="ACCOUNT_APPLICATION">
+</Rule>
+<Rule name="ENASU_Rule_3" mailLevelClass="ENASU" type="DOCUMENT_RULE" value="PRESENT" documentLevelClass="SIMPLE_INDIVIDUAL_RETIREMENT_ACCOUNT_APPLICATION">
+</Rule>
+<Rule name="SMAINT_Rule_1" mailLevelClass="SMAINT" type="DOCUMENT_RULE" value="PRESENT" documentLevelClass="DISTRIBUTION_REQUEST_FORM">
+</Rule>
+<Rule name="SMAINT_Rule_2" mailLevelClass="SMAINT" type="DOCUMENT_RULE" value="PRESENT" documentLevelClass="AUTOMATIC_INVESTMENT_FORM">
+</Rule>
+<Rule name="SMAINT_Rule_3" mailLevelClass="SMAINT" type="DOCUMENT_RULE" value="PRESENT" documentLevelClass="SYSTEMATIC_WITHDRAWAL_PLAN_FORM">
+</Rule>
+<Rule name="TRANSNEW_Rule_1" mailLevelClass="TRANSNEW" type="FIELD_RULE" documentLevelClass="ACCOUNT_TRANSFER_FORM">
+<Vertex name="node_tr_act_1" nature="KEYWORD" writingType="MP" value="Transfer_In_Kind">
+	<rect x="0" y="0" width="2000" height="300"/>
+</Vertex>
+<Vertex name="node_tr_act_2" nature="CHECK_BOX" value="CHECKED">
+</Vertex>
+<Edge>
+	<Vertex name="node_tr_act_1" nodeType="StartNode"/>
+	<Vertex name="node_tr_act_2" nodeType="EndNode"/>
+	<vect x="100" y="0" std_dev_x="50" std_dev_y="20"/>
+</Edge>
+</Rule>
+<Rule name="TRANSNEW_Rule_2" mailLevelClass="TRANSNEW" type="FIELD_RULE" documentLevelClass="ACCOUNT_APPLICATION">
+<Vertex name="node_tr_ap_1" nature="KEYWORD" writingType="MP" value="Transfer_On_Death">
+</Vertex>
+<Vertex name="node_tr_ap_2" nature="CHECK_BOX" value="CHECKED">
+</Vertex>
+<Edge>
+	<Vertex name="node_tr_ap_1" nodeType="StartNode"/>
+	<Vertex name="node_tr_ap_2" nodeType="EndNode"/>
+	<vect x="100" y="0" std_dev_x="50" std_dev_y="20"/>
+</Edge>
+</Rule>
+<Rule name="TRANSNEW_Rule_3" mailLevelClass="TRANSNEW" type="FIELD_RULE" documentLevelClass="GENERIC_FORM">
+<Vertex name="node_tr_gf_1" nature="KEYWORD" writingType="MP" value="Please_Transfer_Shares">
+</Vertex>
+<Vertex name="node_tr_gf_2" nature="FILLED_AREA" value="FILLED">
+</Vertex>
+<Edge>
+	<Vertex name="node_tr_gf_1" nodeType="StartNode"/>
+	<Vertex name="node_tr_gf_2" nodeType="EndNode"/>
+	<vect x="100" y="0" std_dev_x="50" std_dev_y="20"/>
+</Edge>
+</Rule>
+<Rule name="TRANSNEW_Rule_4" mailLevelClass="TRANSNEW" type="FIELD_RULE" documentLevelClass="GENERIC_FORM">
+<Vertex name="node_tr_gf_0" nature="MATRIX_COLUMN" writingType="MP" value="Div_And_Cap_Gains_options_Select">
+</Vertex>
+<Vertex name="node_tr_gf_1" nature="KEYWORD" writingType="MP" value="REINVEST">
+</Vertex>
+<Vertex name="node_tr_ap_11" nature="CHECK_BOX" value="CHECKED">
+</Vertex>
+<Vertex name="node_tr_gf_2" nature="KEYWORD" writingType="MP" value="DIV_CASH_CAPTIAL_GAIN_REINVEST">
+</Vertex>
+<Vertex name="node_tr_ap_21" nature="CHECK_BOX" value="CHECKED">
+</Vertex>
+<Vertex name="node_tr_gf_3" nature="KEYWORD" writingType="MP" value="DIV_REINVEST_CAP_GAIN_CASH">
+</Vertex>
+<Vertex name="node_tr_ap_31" nature="CHECK_BOX" value="CHECKED">
+</Vertex>
+<Vertex name="node_tr_gf_4" nature="KEYWORD" writingType="MP" value="ISSUE_CERT">
+</Vertex>
+<Vertex name="node_tr_ap_41" nature="CHECK_BOX" value="CHECKED">
+</Vertex>
+<Vertex name="node_tr_gf_5" nature="KEYWORD" writingType="MP" value="DEPOSIT_TO_NEW_PLAN">
+</Vertex>
+<Vertex name="node_tr_ap_51" nature="CHECK_BOX" value="CHECKED">
+</Vertex>
+<Vertex name="node_tr_gf_6" nature="KEYWORD" writingType="MP" value="DEPOSIT_TO_EXISTING_PLAN">
+</Vertex>
+<Vertex name="node_tr_ap_61" nature="CHECK_BOX" value="CHECKED">
+</Vertex>
+<Edge>
+	<Vertex name="node_tr_gf_1" nodeType="StartNode"/>
+	<Vertex name="node_tr_gf_2" nodeType="EndNode"/>
+	<vect x="100" y="0" std_dev_x="50" std_dev_y="20"/>
+</Edge>
+<Edge>
+	<Vertex name="node_tr_gf_1" nodeType="StartNode"/>
+	<Vertex name="node_tr_gf_2" nodeType="EndNode"/>
+	<vect x="100" y="0" std_dev_x="50" std_dev_y="20"/>
+</Edge>
+<Edge>
+	<Vertex name="node_tr_gf_1" nodeType="StartNode"/>
+	<Vertex name="node_tr_gf_2" nodeType="EndNode"/>
+	<vect x="100" y="0" std_dev_x="50" std_dev_y="20"/>
+</Edge>
+<Edge>
+	<Vertex name="node_tr_gf_1" nodeType="StartNode"/>
+	<Vertex name="node_tr_gf_2" nodeType="EndNode"/>
+	<vect x="100" y="0" std_dev_x="50" std_dev_y="20"/>
+</Edge>
+<Edge>
+	<Vertex name="node_tr_gf_1" nodeType="StartNode"/>
+	<Vertex name="node_tr_gf_2" nodeType="EndNode"/>
+	<vect x="100" y="0" std_dev_x="50" std_dev_y="20"/>
+</Edge>
+<Edge>
+	<Vertex name="node_tr_gf_1" nodeType="StartNode"/>
+	<Vertex name="node_tr_gf_2" nodeType="EndNode"/>
+	<vect x="100" y="0" std_dev_x="50" std_dev_y="20"/>
+</Edge>
+</Rule>
+<Rule name="TRANSNEW_Rule_5" mailLevelClass="TRANSNEW" type="FIELD_RULE" documentLevelClass="MUTUAL_FUND_NON_RETIREMENT_TRANSFER_IN_FORM">
+<Vertex name="node_tr_mf_0" nature="MATRIX_COLUMN" writingType="MP" value="dividend">
+</Vertex>
+<Vertex name="node_tr_mf_1" nature="KEYWORD" writingType="MP" value="reinvest">
+</Vertex>
+</Rule>
+<Rule name="TRANSNEW_Rule_6" mailLevelClass="TRANSNEW" type="FIELD_RULE" documentLevelClass="Request_For_Transfer_Of_Assets">
+<Vertex name="node_tr_rf_1" nature="KEYWORD" writingType="MP" value="Transfer">
+</Vertex>
+<Vertex name="node_tr_rf_2" nature="CHECK_BOX" value="CHECKED">
+</Vertex>
+<Edge>
+	<Vertex name="node_tr_rf_1" nodeType="StartNode"/>
+	<Vertex name="node_tr_rf_2" nodeType="EndNode"/>
+	<vect x="100" y="0" std_dev_x="50" std_dev_y="20"/>
+</Edge>
+</Rule>
+<Rule name="TRANSNEW_Rule_7" mailLevelClass="TRANSNEW" type="FIELD_RULE" documentLevelClass="Direct_Rollover">
+<Vertex name="node_tr_dr_1" nature="KEYWORD" writingType="MP" value="Transfer">
+</Vertex>
+<Vertex name="node_tr_dr_2" nature="CHECK_BOX" value="CHECKED">
+</Vertex>
+<Edge>
+	<Vertex name="node_tr_dr_1" nodeType="StartNode"/>
+	<Vertex name="node_tr_dr_2" nodeType="EndNode"/>
+	<vect x="100" y="0" std_dev_x="50" std_dev_y="20"/>
+</Edge>
+</Rule>
+</Numerics>
+

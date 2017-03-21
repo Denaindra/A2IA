@@ -1,0 +1,7 @@
+
+Those characters are used for recognition displays in Python_Kob windows.
+
+
+Following code corresponds to ArabTeX syntax :
+
+\RL{\novocalize \# a .b- -- h -h .h- .h -d r s- s .s- .s .t `- -`- ` -` .f- k- l- l m- m -n h- -h- w Y -laa la.h- -- .na.h- lam- }

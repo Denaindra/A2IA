@@ -1,0 +1,15 @@
+SSN             ; SSN           ; 0 0 0 0 ; SSN_value:0.9:4_3_0.5_3 unknown:0.1         ; SOCIAL SECURITY SSN\ SOCIALSECURITY    ; -opp   ; -none
+SSN_value       ; SSN_value     ; 0 0 0 0 ; -equi                                       ; -none                    ; -none  ; ddd-dd-dddd
+TAX             ; TAX           ; 0 0 0 0 ; TAX_value:0.9:4_3_0.5_0.5 unknown:0.1       ; TAX ID TAXID             ; -opp   ; -none
+TAX_value       ; TAX_value     ; 0 0 0 0 ; -equi                                       ; -none                    ; -none  ; ddddddddddddd
+Phone           ; Phone         ; 0 0 0 0 ; Phone_value:0.9:4_3_0.5_0.5 unknown:0.1     ; PHONE                    ; -opp   ; -none
+Phone_value     ; Phone_value   ; 0 0 0 0 ; -equi                                       ; -none                    ; -none  ; ddd-dd-ddd
+ZIP             ; ZIP           ; 0 0 0 0 ; ZIP_value:0.9:4_3_0.5_0.5 unknown:0.1       ; ZIP                      ; -opp   ; -none
+ZIP_value       ; ZIP_value     ; 0 0 0 0 ; -equi                                       ; -none                    ; -none  ; ddddd
+ACCOUNT         ; Account       ; 0 0 0 0 ; ACCOUNT_value:0.9:4_3_0.5_0.5 unknown:0.1   ; ACCOUNT                  ; -opp   ; -none
+ACCOUNT_value   ; Account_value ; 0 0 0 0 ; -equi                                       ; -none                    ; -none  ; dddddddddddddd
+DOB             ; Date of birth ; 0 0 0 0 ; DOB_value:0.9:4_3_0.5_0.5 unknown:0.1       ; DATE BIRTH DATEBIRTH     ; -opp   ; -none
+DOB_value       ; DOB_value     ; 0 0 0 0 ; -equi                                       ; -none                    ; -none  ; dd-dd-dddd
+any             ; any           ; 0 0 0 0 ; any_value:0.9:4_3_0.5_3 unknown:0.1         ; -none                    ; -none  ; -none 
+any_value       ; any_value     ; 0 0 0 0 ; -equi                                       ; -none                    ; -none  ; -none
+unknown         ; unknown       ; 1 1 1 1 ; -unknown                                    ; -none                    ; -none  ; -none

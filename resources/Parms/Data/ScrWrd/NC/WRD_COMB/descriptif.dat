@@ -1,0 +1,4 @@
+1     /* Number of hidden layers */
+80    /* Number of features */
+40    /* Number of neurons */
+40    /* Number of classes */

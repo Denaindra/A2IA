@@ -1,0 +1,88 @@
+33	# in
+40	#out
+0	francs	francs	10
+1	un	un	7036
+2	deux	deux	4009
+3	trois	trois	2847
+4	quatre	quatre	2486
+5	cinq	cinq	4141
+6	six	six	2090
+7	sept	sept	2019
+8	huit	huit	1949
+9	neuf	neuf	1802
+10	dix	dix	961
+11	onze	onze	418
+12	douze	douze	551
+13	treize	treize	467
+14	quatorze	quatorze	413
+15	quinze	quinze	993
+16	seize	seize	390
+17	vingt	vingt	388
+18	trente	trente	442
+19	quarante	quarante	378
+20	cinquante	cinquante	4869
+21	soixante	soixante	3210
+22	cent	cent	2388
+23	mille	mille	3395
+24	centimes	centimes	1725
+25	cts	cts	1668
+26	frs	frs	1278
+27	euros	euros	5000
+28	*	zero	10
+29	et	et	1214
+30	NUM	NUM	734
+31	minus	minus	27535
+32	*	plus	1
+33	bruit	noise	2171
+34	*	XXX	0
+35	*	XXX	0
+36	*	XXX	0
+37	*	XXX	0
+38	*	XXX	0
+39	XXX	XXX	1310
+
+44	#nb classes grph (cf NN)
+a
+a2
+c
+c2
+d
+d2
+e
+e2
+f
+f2
+g
+g2
+h
+h2
+i
+i2
+l
+l2
+m
+m2
+n
+n2
+o
+o2
+p
+p2
+q
+q2
+r
+r2
+s
+s2
+t
+t2
+u
+u2
+v
+v2
+x
+x2
+z
+z2
+NUM
+*
